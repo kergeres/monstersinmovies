@@ -1,0 +1,192 @@
+main {
+  padding-top: 80px;
+}
+
+.bg-container {
+  background-image: url("/img/upload-bg.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: fixed;
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.upload-form {
+  width: 600px;
+  height: 1000px;
+  margin: 0px auto 80px auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-field {
+  margin: 0 auto;
+  width: 600px;
+  height: 230px;
+  padding: 30px 0px 0px 50px;
+  background-color: rgba(95, 158, 160, 0.7);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.user-field label {
+  margin-right: 20px;
+  display: inline-block;
+  left: -180px;
+  position: relative;
+  top: 4px;
+  color: #354e4f;
+}
+.user-field input {
+  width: 180px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  float: left;
+  display: block;
+  top: 25px;
+  color: #424242;
+  position: relative;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.user-field .input-container {
+  clear: both;
+  min-width: 265px;
+  display: inline-block;
+  height: 85px;
+}
+
+#email {
+  width: 300px;
+}
+
+label[for=email] {
+  left: -300px;
+}
+
+.content-field {
+  width: 600px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 500px;
+  background-color: rgba(71, 118, 120, 0.7);
+  margin: 0 auto;
+  padding: 30px 0px 0px 50px;
+}
+.content-field .input-container {
+  clear: both;
+  min-width: 265px;
+  display: inline-block;
+  height: 85px;
+}
+.content-field .input-container label {
+  margin-right: 20px;
+  display: inline-block;
+  left: -370px;
+  position: relative;
+  top: 4px;
+  color: #354e4f;
+  width: 140px;
+}
+.content-field .input-container input {
+  width: 370px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  float: left;
+  display: block;
+  top: 25px;
+  color: #424242;
+  position: relative;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.content-field .input-container button {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 4px;
+  left: 20px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+}
+.content-field .input-container button:hover {
+  background-color: #647c7d;
+}
+.content-field .input-container-small {
+  clear: both;
+  min-width: 265px;
+  display: inline-block;
+  height: 85px;
+}
+.content-field .input-container-small label {
+  margin-right: 20px;
+  display: inline-block;
+  left: -180px;
+  position: relative;
+  top: -5px;
+  color: #354e4f;
+  width: 140px;
+}
+.content-field .input-container-small input {
+  width: 180px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  float: left;
+  display: block;
+  top: 25px;
+  color: #424242;
+  position: relative;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.content-field .input-container-small select {
+  height: 40px;
+  width: 90px;
+  position: relative;
+  top: 26px;
+  left: -140px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+}
+.content-field .input-container-small select option {
+  text-align: center;
+  font-size: 16px;
+}
+.content-field .input-container-small button {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 4px;
+  left: 20px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+}
+.content-field .input-container-small button:hover {
+  background-color: #647c7d;
+}
+
+/*# sourceMappingURL=upload.css.map */

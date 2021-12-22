@@ -1,10 +1,17 @@
 [{
         "id": 1,
-        "title": "Godzilla"
+        "title": "Godzilla",
+        "shortDesc": "valami szoveg a godzillarol"
     },
     {
         "id": 2,
-        "title": "Balrog"
+        "title": "Balrog",
+        "shortDesc": "valami szoveg a balrgoraol"
+    },
+    {
+        "id": 3,
+        "title": "trex",
+        "shortDesc": "valami szoveg a trexrol"
     }
 
-]
+] 

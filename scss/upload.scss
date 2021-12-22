@@ -1,0 +1,196 @@
+@import "vars";
+
+main {
+  padding-top: 80px;
+}
+.bg-container {
+  background-image: url("/img/upload-bg.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: fixed;
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.upload-form {
+  //   z-index: 3;
+  width: 600px;
+  height: 1000px;
+  margin: 0px auto 80px auto;
+  //   padding: 50px 0px 50px 50px;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+}
+
+.user-field {
+  margin: 0 auto;
+  width: 600px;
+  height: 230px;
+  padding: 30px 0px 0px 50px;
+  background-color: $user-field-bgco;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  label {
+    margin-right: 20px;
+    display: inline-block;
+    left: -180px;
+    position: relative;
+    top: 4px;
+    color: #354e4f;
+  }
+  input {
+    width: 180px;
+    padding-left: 7px;
+    font-size: 16px;
+    height: 40px;
+    float: left;
+    display: block;
+    top: 25px;
+    color: #424242;
+    position: relative;
+    border: 1px solid #354e4f;
+    background-color: lighten($user-field-bgco, 80%);
+    border-radius: 1px;
+  }
+  .input-container {
+    //   border: $border;
+    clear: both;
+    min-width: 265px;
+    display: inline-block;
+    height: 85px;
+  }
+}
+
+#email {
+  width: 300px;
+}
+
+label[for="email"] {
+  left: -300px;
+}
+
+.content-field {
+  width: 600px;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  height: 500px;
+  background-color: $content-field-bgco;
+  margin: 0 auto;
+  padding: 30px 0px 0px 50px;
+  //   border: $border;
+  .input-container {
+    //   border: $border;
+    clear: both;
+    min-width: 265px;
+    display: inline-block;
+    height: 85px;
+    label {
+      margin-right: 20px;
+      display: inline-block;
+      left: -370px;
+      position: relative;
+      top: 4px;
+      color: #354e4f;
+      width: 140px;
+    }
+    input {
+      width: 370px;
+      padding-left: 7px;
+      font-size: 16px;
+      height: 40px;
+      float: left;
+      display: block;
+      top: 25px;
+      color: #424242;
+      position: relative;
+      border: 1px solid #354e4f;
+      background-color: lighten($user-field-bgco, 80%);
+      border-radius: 1px;
+    }
+    button {
+      height: 40px;
+      width: 40px;
+      position: relative;
+      top: 4px;
+      left: 20px;
+      cursor: pointer;
+      background-color: #6b8485;
+      border: 1px solid #354e4f;
+      color: #424242;
+      border-radius: 2px;
+      &:hover {
+        background-color: darken(#6b8485, 3);
+      }
+    }
+  }
+  .input-container-small {
+    //   border: $border;
+    clear: both;
+    min-width: 265px;
+    display: inline-block;
+    height: 85px;
+    label {
+      margin-right: 20px;
+      display: inline-block;
+      left: -180px;
+      position: relative;
+      top: -5px;
+      color: #354e4f;
+      width: 140px;
+    }
+    input {
+      width: 180px;
+      padding-left: 7px;
+      font-size: 16px;
+      height: 40px;
+      float: left;
+      display: block;
+      top: 25px;
+      color: #424242;
+      position: relative;
+      border: 1px solid #354e4f;
+      background-color: lighten($user-field-bgco, 80%);
+      border-radius: 1px;
+    }
+    select {
+      height: 40px;
+      width: 90px;
+      position: relative;
+      top: 26px;
+      left: -140px;
+      cursor: pointer;
+      background-color: #6b8485;
+      border: 1px solid #354e4f;
+      color: #424242;
+      border-radius: 2px;
+      option {
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+    button {
+      height: 40px;
+      width: 40px;
+      position: relative;
+      top: 4px;
+      left: 20px;
+      cursor: pointer;
+      background-color: #6b8485;
+      border: 1px solid #354e4f;
+      color: #424242;
+      border-radius: 2px;
+      &:hover {
+        background-color: darken(#6b8485, 3);
+      }
+    }
+  }
+}
