@@ -48,6 +48,48 @@ async function init() {
 }
 init();
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBOC0w_ML4qOHKRFTHp5_o2kGLImSE-29A",
+  authDomain: "spitfy-graphs.firebaseapp.com",
+  projectId: "spitfy-graphs",
+  storageBucket: "spitfy-graphs.appspot.com",
+  messagingSenderId: "235726714106",
+  appId: "1:235726714106:web:90c46bc58370e2ef080543",
+  measurementId: "G-LWDKH1XG04"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+const db = firebase.firestore();
+const resultRef = db.collection("test");
+let resultArray = []
+
+resultRef.onSnapshot(function (snapshotData) {
+  resultArray = []
+  snapshotData.forEach(doc => {
+    let ex = doc.data();
+    console.log(ex);
+  });
+});
+
+
+
+
+
+
+
+
+
 
 function searchPrograms(value) {
 
