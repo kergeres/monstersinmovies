@@ -38,6 +38,7 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
 .user-field label {
   margin-right: 20px;
   display: inline-block;
@@ -46,6 +47,7 @@ body {
   top: 4px;
   color: #354e4f;
 }
+
 .user-field input {
   width: 180px;
   padding-left: 7px;
@@ -60,6 +62,7 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 1px;
 }
+
 .user-field .input-container {
   clear: both;
   min-width: 265px;
@@ -71,7 +74,7 @@ body {
   width: 300px;
 }
 
-label[for=email] {
+label[for="email"] {
   left: -300px;
 }
 
@@ -84,12 +87,14 @@ label[for=email] {
   margin: 0 auto;
   padding: 30px 0px 0px 50px;
 }
+
 .content-field .input-container {
   clear: both;
   min-width: 265px;
   display: inline-block;
   height: 85px;
 }
+
 .content-field .input-container label {
   margin-right: 20px;
   display: inline-block;
@@ -99,6 +104,7 @@ label[for=email] {
   color: #354e4f;
   width: 140px;
 }
+
 .content-field .input-container input {
   width: 370px;
   padding-left: 7px;
@@ -113,6 +119,7 @@ label[for=email] {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 1px;
 }
+
 .content-field .input-container button {
   height: 40px;
   width: 40px;
@@ -125,15 +132,18 @@ label[for=email] {
   color: #424242;
   border-radius: 2px;
 }
+
 .content-field .input-container button:hover {
   background-color: #647c7d;
 }
+
 .content-field .input-container-small {
   clear: both;
   min-width: 265px;
   display: inline-block;
   height: 85px;
 }
+
 .content-field .input-container-small label {
   margin-right: 20px;
   display: inline-block;
@@ -143,6 +153,7 @@ label[for=email] {
   color: #354e4f;
   width: 140px;
 }
+
 .content-field .input-container-small input {
   width: 180px;
   padding-left: 7px;
@@ -157,6 +168,7 @@ label[for=email] {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 1px;
 }
+
 .content-field .input-container-small select {
   height: 40px;
   width: 90px;
@@ -169,10 +181,12 @@ label[for=email] {
   color: #424242;
   border-radius: 2px;
 }
+
 .content-field .input-container-small select option {
   text-align: center;
   font-size: 16px;
 }
+
 .content-field .input-container-small button {
   height: 40px;
   width: 40px;
@@ -185,8 +199,8 @@ label[for=email] {
   color: #424242;
   border-radius: 2px;
 }
+
 .content-field .input-container-small button:hover {
   background-color: #647c7d;
 }
-
 /*# sourceMappingURL=upload.css.map */

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Find every monster, creature and titan of movie universes.">
     <meta name="author" content="David Papp">
-    <title>Monster in movies | upload</title>
+    <title>Monster in Movies | Upload</title>
     <link rel="shortcut icon" type="image/svg" href="../img/tie.jpg" />
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/upload.css">
@@ -42,20 +42,16 @@
                 </div>
 
                 <div class="input-container">
-                    <input id="mname" type="text" name="mname" autocomplete="of">
-                    <label for="mname">appearance</label>
+                    <input id="appearance" type="text" name="appearance" autocomplete="of">
+                    <label for="appearance">appearance</label>
                     <button type="button"><i class="fas fa-plus"></i></button>
 
                 </div>
-
-
-
-
                 <div class="input-container-small">
                     <input id="height" type="text" name="height" autocomplete="of">
                     <label for="height">height</label>
                     <!-- <button type="button"><i class="fas fa-plus"></i></button> -->
-                    <select>
+                    <select id="heightUnit">
                         <option>centimeter</option>
                         <option>meter</option>
                         <option>inches</option>
@@ -64,17 +60,47 @@
 
                 </div>
                 <div class="input-container-small">
-                    <input id="height" type="text" name="height" autocomplete="of">
-                    <label for="height">weight</label>
+                    <input id="weight" type="text" name="weight" autocomplete="of">
+                    <label for="weight">weight</label>
                     <!-- <button type="button"><i class="fas fa-plus"></i></button> -->
-                    <select>
+                    <select id="weightUnit">
                         <option>gram</option>
                         <option>kilogram</option>
                         <option>pound</option>
                     </select>
 
                 </div>
+                <div class="input-container-small">
+                    <input id="age" type="text" name="age" autocomplete="of">
+                    <label for="age">age</label>
+                </div>
 
+                <div class="input-container-small">
+                    <input id="pog" type="text" name="pog" autocomplete="of">
+                    <label for="pog">place of origin</label>
+                </div>
+                <div class="input-container-small">
+                    <input id="ability" type="text" name="ability" autocomplete="of">
+                    <label for="ability">ability</label>
+                </div>
+                <div class="input-container-small">
+                    <input id="creator" type="text" name="creator" autocomplete="of">
+                    <label for="creator">creator</label>
+                </div>
+                <div class="input-container-small">
+                    <input id="history" type="text" name="history" autocomplete="of">
+                    <label for="history">History</label>
+                </div>
+                <div class="input-container-small">
+                    <input id="about" type="text" name="about" autocomplete="of">
+                    <label for="about">about</label>
+                </div>
+
+                <div class="input-container-small">
+                    <input id="extlinks" type="text" name="extlinks" autocomplete="of">
+                    <label for="extlinks">external links</label>
+                </div>
+                <button id="submit" type="button">upload</button>
 
             </div>
         </form>
@@ -82,8 +108,13 @@
     </main>
 
     <!-- <script src="script/main.js"></script> -->
-    <script src="../script/upload.js"></script>
-    <script src="../script/main.js"></script>
+    <script type="module" src="../script/upload.js"></script>
+    <!-- <script src="../script/main.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
 </body>
 
 </html>

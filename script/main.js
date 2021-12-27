@@ -32,21 +32,22 @@ function hamburgerNav() {
   }
 }
 
-let database = [];
+// let database = [];
 
-async function loadData() {
-  let response = await fetch("../data/json.json");
-  let jsonData = await response.json();
-  database = jsonData
-  appendNav(database)
+// async function loadData() {
+//   let response = await fetch("../data/json.json");
+//   let jsonData = await response.json();
+//   database = jsonData
+//   appendNav(database)
+//   clickListener()
 
-}
+// }
 
-async function init() {
-  await loadData();
+// async function init() {
+//   await loadData();
 
-}
-init();
+// }
+// init();
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
@@ -68,34 +69,34 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const db = firebase.firestore();
-const resultRef = db.collection("test");
-let resultArray = []
+const firebaseMonstersRef = db.collection("monsters");
 
-resultRef.onSnapshot(function (snapshotData) {
-  resultArray = []
+let database = [];
+firebaseMonstersRef.onSnapshot(function (snapshotData) {
+
   snapshotData.forEach(doc => {
-    let ex = doc.data();
-    console.log(ex);
-  });
+    let dt = doc.data();
+    dt.id = doc.id;
+    database.push(dt);
+
+  }
+  );
+  appendNav(database)
 });
 
 
-
-
-
-
-
-
-
+document.querySelector(".search-input").addEventListener('keyup', (e) => {
+  let srchValue = document.querySelector('.search-input').value
+  searchPrograms(srchValue)
+})
 
 function searchPrograms(value) {
 
   let filteredPrograms = []
   for (const item of database) {
-    let title = item.title.toLowerCase();
+    let title = item.monster.mname.toLowerCase();
 
     if (title.includes(value.toLowerCase())) {
       filteredPrograms.push(item);
@@ -109,19 +110,36 @@ function appendNav(items) {
   let temlplete = ""
 
   for (let item of items) {
-    temlplete += `<p onclick="appendProfile(${item.id})">${item.title}</p> `
+    temlplete += `<p class="navAppended">${item.monster.mname}</p> `
 
   }
-
+  // onclick="appendProfile(${item.id})"
   document.querySelector(".item-title-container").innerHTML = temlplete
+  clickListener()
 
 }
 
+
+let clickListener = () => {
+
+  let cbox = document.querySelectorAll(".navAppended");
+  cbox.forEach(box => {
+    box.addEventListener('click', (e) => {
+      appendProfile(e.target.innerHTML)
+    })
+  }
+  )
+}
+clickListener()
+
 function appendProfile(bejon) {
+
   let htmlTemplate = ""
-  for (const iterator of database) {
-    if (iterator.id == bejon) {
-      htmlTemplate = `<h1>${iterator.id}</h1> <p>${iterator.shortDesc}</p>`
+  for (let iterator of database) {
+    if (iterator.monster.mname == bejon) {
+      htmlTemplate = `
+      
+      <h1>${iterator.monster.mname}</h1> <p>${iterator.monster.height}</p>`
     }
   }
   document.querySelector(".content-container").innerHTML = htmlTemplate;
