@@ -134,12 +134,73 @@ clickListener()
 
 function appendProfile(bejon) {
 
+
   let htmlTemplate = ""
   for (let iterator of database) {
+    let appearance = iterator.monster.appearance != "" ? "appearance" : ""
+    let weight = iterator.monster.weight != "" ? "weight" : ""
+    let weightUnit = iterator.monster.weightUnit != "" ? "weightUnit" : ""
+    let height = iterator.monster.height != "" ? "height" : ""
+    let heightUnit = iterator.monster.heightUnit != "" ? "heightUnit" : ""
+    let birth = iterator.monster.birth != "" ? "birth" : ""
+    let pog = iterator.monster.pog != "" ? "place of origin" : ""
+    let ability = iterator.monster.ability != "" ? "ability" : ""
+    let creator = iterator.monster.creator != "" ? "creator" : ""
+    let history = iterator.monster.history != "" ? "history" : ""
+    let about = iterator.monster.about != "" ? "about" : ""
     if (iterator.monster.mname == bejon) {
       htmlTemplate = `
-      
-      <h1>${iterator.monster.mname}</h1> <p>${iterator.monster.height}</p>`
+
+      <div class="div-top">
+          <h1>${iterator.monster.mname}</h1>
+      </div>
+      <div class="div-left">
+          <table>
+              <tr>
+                  <td>${appearance}</td>
+                  <td>${iterator.monster.appearance}
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>${height}</td>
+                  <td>${iterator.monster.height} ${iterator.monster.heightUnit}</td>
+              </tr>
+              <tr>
+                  <td>${weight}</td>
+                  <td>${iterator.monster.weight}</td>
+              </tr>
+              <tr>
+                  <td>${birth}</td>
+                  <td>${iterator.monster.birth} (${iterator.monster.age} years old)</td>
+              </tr>
+              <tr>
+                  <td>${pog}</td>
+                  <td>${iterator.monster.pog}</td>
+              </tr>
+              <tr>
+                  <td>${ability}</td>
+                  <td>${iterator.monster.ability}</td>
+              </tr>
+              <tr>
+                  <td>${creator}</td>
+                  <td>${iterator.monster.creator}<br></td>
+              </tr>
+          </table>
+      </div>
+      <div class="div-right">
+          <img src="img/tie2.jpg">
+          <img src="img/tie2.jpg">
+          <img src="img/tie2.jpg">
+          <img src="img/tie2.jpg">
+          <img src="img/tie2.jpg">
+      </div>
+      <div class="div-bottom">
+          <h2>${history}</h2>
+          <p>${iterator.monster.history}</p>
+          <h2>${about}</h2>
+          <p>${iterator.monster.about}</p>
+      </div>`
     }
   }
   document.querySelector(".content-container").innerHTML = htmlTemplate;

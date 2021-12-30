@@ -1,5 +1,16 @@
 @import "vars";
-
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}
 main {
   padding-top: 80px;
 }
@@ -78,6 +89,19 @@ label[for="email"] {
   left: -300px;
 }
 
+#dd,
+#mm {
+  width: 48px;
+  margin-right: 5px;
+}
+#yyyy {
+  width: 96px;
+}
+#extracontainer-appearance {
+  width: auto;
+  display: none;
+  height: auto;
+}
 .content-field {
   width: 600px;
   border-bottom-right-radius: $border-radius;
@@ -88,11 +112,12 @@ label[for="email"] {
   padding: 30px 0px 0px 50px;
   //   border: $border;
   .input-container {
-    //   border: $border;
+    // border: $border;
+    padding-bottom: 25px;
     clear: both;
     min-width: 265px;
     display: inline-block;
-    height: 85px;
+    min-height: 85px;
     label {
       margin-right: 20px;
       display: inline-block;
@@ -103,6 +128,7 @@ label[for="email"] {
       width: 140px;
     }
     input {
+      margin-top: 5px;
       width: 370px;
       padding-left: 7px;
       font-size: 16px;
@@ -116,11 +142,12 @@ label[for="email"] {
       background-color: lighten($user-field-bgco, 80%);
       border-radius: 1px;
     }
+
     button {
       height: 40px;
       width: 40px;
       position: relative;
-      top: 4px;
+      top: 11px;
       left: 20px;
       cursor: pointer;
       background-color: #6b8485;
@@ -132,8 +159,22 @@ label[for="email"] {
       }
     }
   }
+  #ability-container,
+  #creator-container,
+  #extlinks-container {
+    width: 300px;
+    .ability,
+    .creator {
+      margin-top: 5px;
+    }
+    label {
+      left: 0px;
+      position: relative;
+      top: -45px;
+    }
+  }
+
   .input-container-small {
-    //   border: $border;
     clear: both;
     min-width: 265px;
     display: inline-block;
@@ -143,7 +184,7 @@ label[for="email"] {
       display: inline-block;
       left: -180px;
       position: relative;
-      top: -5px;
+      top: 5px;
       color: #354e4f;
       width: 140px;
     }
@@ -181,8 +222,8 @@ label[for="email"] {
       height: 40px;
       width: 40px;
       position: relative;
-      top: 4px;
-      left: 20px;
+      top: -15px;
+      left: 30px;
       cursor: pointer;
       background-color: #6b8485;
       border: 1px solid #354e4f;

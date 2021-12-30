@@ -34,6 +34,7 @@
             </div>
 
             <div class="content-field">
+                <input id="img-to-upload" type="file">
                 <div class="input-container">
                     <input id="mname" type="text" name="mname" autocomplete="of">
                     <label for="mname">Creature's name</label>
@@ -41,13 +42,16 @@
 
                 </div>
 
-                <div class="input-container">
-                    <input id="appearance" type="text" name="appearance" autocomplete="of">
+                <div id="appearance-container" class="input-container">
+
+                    <input class="appearance 2" placeholder="appearance" type="text" name="appearance"
+                        autocomplete="of">
+                    <div id="extracontainer-appearance"></div>
                     <label for="appearance">appearance</label>
-                    <button type="button"><i class="fas fa-plus"></i></button>
+                    <button id="appearance-btn" type="button"><i class="fas fa-plus"></i></button>
 
                 </div>
-                <div class="input-container-small">
+                <div class="input-container-small ">
                     <input id="height" type="text" name="height" autocomplete="of">
                     <label for="height">height</label>
                     <!-- <button type="button"><i class="fas fa-plus"></i></button> -->
@@ -74,18 +78,31 @@
                     <input id="age" type="text" name="age" autocomplete="of">
                     <label for="age">age</label>
                 </div>
+                <div class="input-container-small">
+                    <input maxlength="2" placeholder="dd" id="dd" type="text" name="dd" autocomplete="of">
+                    <input maxlength="2" placeholder="mm" id="mm" type="text" name="mm" autocomplete="of">
+                    <input maxlength="4" placeholder="yyyy" id="yyyy" type="text" name="yyyy" autocomplete="of">
+                    <label for="dd">birth</label>
+                </div>
 
                 <div class="input-container-small">
                     <input id="pog" type="text" name="pog" autocomplete="of">
                     <label for="pog">place of origin</label>
                 </div>
-                <div class="input-container-small">
-                    <input id="ability" type="text" name="ability" autocomplete="of">
+                <div id="ability-container" class="input-container-small">
+                    <input placeholder="ability" class="ability 1" id="ability" type="text" name="ability"
+                        autocomplete="of">
+                    <div id="extracontainer-ability"></div>
                     <label for="ability">ability</label>
+                    <button id="ability-btn" type="button"><i class="fas fa-plus"></i></button>
+
                 </div>
-                <div class="input-container-small">
-                    <input id="creator" type="text" name="creator" autocomplete="of">
+                <div id="creator-container" class="input-container-small">
+                    <input class="1 creator" id="creator" type="text" name="creator" autocomplete="of">
+                    <div id="extracontainer-creator"></div>
                     <label for="creator">creator</label>
+                    <button id="creator-btn" type="button"><i class="fas fa-plus"></i></button>
+
                 </div>
                 <div class="input-container-small">
                     <input id="history" type="text" name="history" autocomplete="of">
@@ -96,9 +113,11 @@
                     <label for="about">about</label>
                 </div>
 
-                <div class="input-container-small">
-                    <input id="extlinks" type="text" name="extlinks" autocomplete="of">
+                <div id="extlinks-container" class="input-container-small">
+                    <input class="1 extlinks" id="extlinks" type="text" name="extlinks" autocomplete="of">
+                    <div id="extracontainer-extlinks"></div>
                     <label for="extlinks">external links</label>
+                    <button id="extlinks-btn" type="button"><i class="fas fa-plus"></i></button>
                 </div>
                 <button id="submit" type="button">upload</button>
 

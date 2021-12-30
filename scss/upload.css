@@ -92,7 +92,7 @@ label[for="email"] {
   clear: both;
   min-width: 265px;
   display: inline-block;
-  height: 85px;
+  min-height: 85px;
 }
 
 .content-field .input-container label {
