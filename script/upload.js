@@ -1,13 +1,7 @@
 "use strict"
 
-
-// import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,7 +11,6 @@ const firebaseConfig = {
     apiKey: "AIzaSyBOC0w_ML4qOHKRFTHp5_o2kGLImSE-29A",
     authDomain: "spitfy-graphs.firebaseapp.com",
     projectId: "spitfy-graphs",
-    databaseURL: "https://spitfy-graphs-default-rtdb.europe-west1.firebasedatabase.app",
     storageBucket: "spitfy-graphs.appspot.com",
     messagingSenderId: "235726714106",
     appId: "1:235726714106:web:90c46bc58370e2ef080543",
@@ -26,15 +19,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const firebaseApp = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
 const db = firebase.firestore();
-
-
-
-const analytics = firebaseApp(app);
-const storage = getStorage(firebaseApp);
-
-const fireabaseStorage = getStorage(firebaseApp);
 const firebaseMonstersRef = db.collection("monsters");
 const firebaseToUpload = db.collection("toUpload");
 
@@ -172,10 +159,11 @@ function fireStoreUpload() {
         let heightUnit = document.querySelector('#heightUnit').value
         let weight = document.querySelector('#weight').value
         let weightUnit = document.querySelector('#weightUnit').value
-        let age = document.querySelector('#age').value
-        let birth = `${document.querySelector('#mm').value} ${document.querySelector('#dd').value}/${document.querySelector('#mm').value}`
+        let stringBirth = `${document.querySelector('#dd').value}/${document.querySelector('#mm').value}/${document.querySelector('#yyyy').value}`
+        let age = document.querySelector('#age').value != "" ? document.querySelector('#age').value : ""
+        let birth = document.querySelector('#yyyy').value != "" ? new Date(parseInt(document.querySelector('#yyyy').value), parseInt(document.querySelector('#mm').value), parseInt(document.querySelector('#dd').value)) : (age * 31556952)
 
-        let pog = document.querySelector('#yyyy').value
+        let pog = document.querySelector('#pog').value
         // let ability = document.querySelector('#ability').value
         // let creator = document.querySelector('#creator').value
         let history = document.querySelector('#history').value
@@ -199,6 +187,8 @@ function fireStoreUpload() {
                     weight: weight + weightUnit,
                     weightUnit: weightUnit,
                     birth: birth,
+                    stringBirth: stringBirth,
+                    age: age,
                     pog: pog,
                     ability: ability,
                     creator: creator,

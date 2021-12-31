@@ -148,7 +148,18 @@ function appendProfile(bejon) {
     let creator = iterator.monster.creator != "" ? "creator" : ""
     let history = iterator.monster.history != "" ? "history" : ""
     let about = iterator.monster.about != "" ? "about" : ""
+
+
+
     if (iterator.monster.mname == bejon) {
+
+
+
+      let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
+      // let e = new Date(iterator.monster.birth / 100).getFullYear()
+      let e = new Date(iterator.monster.birth.seconds).getMonth()
+      console.log(e);
+
       htmlTemplate = `
 
       <div class="div-top">
@@ -158,8 +169,7 @@ function appendProfile(bejon) {
           <table>
               <tr>
                   <td>${appearance}</td>
-                  <td>${iterator.monster.appearance}
-                  </td>
+                  <td>$ ${iterator.monster.appearance}</td>
               </tr>
 
               <tr>
@@ -172,7 +182,7 @@ function appendProfile(bejon) {
               </tr>
               <tr>
                   <td>${birth}</td>
-                  <td>${iterator.monster.birth} (${iterator.monster.age} years old)</td>
+                  <td>${iterator.monster.birth} (${age} years old)</td>
               </tr>
               <tr>
                   <td>${pog}</td>
