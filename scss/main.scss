@@ -52,12 +52,6 @@ $border: 1px solid black;
   transition: 1s;
   border-image: linear-gradient(to right, #070707, rgba(235, 235, 235, 0)) 1
     100%;
-  button {
-    border: none;
-    background: none;
-    text-decoration: none;
-    color: #707070;
-  }
 }
 .scroll-header-shrinker {
   height: 50px;
@@ -225,7 +219,14 @@ nav p {
     // margin-bottom: 0px;
   }
 }
-
+.upload-btn-dstp {
+  position: absolute;
+  right: 50px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: #707070;
+}
 h1 {
   text-align: center;
   color: #0a0907;

@@ -1,5 +1,4 @@
 "use strict";
-
 // let database = [];
 
 // async function loadData() {
@@ -105,17 +104,18 @@ function appendProfile(bejon) {
 
   let htmlTemplate = ""
   for (let iterator of database) {
-    let appearance = iterator.monster.appearance != "" ? "appearance" : ""
-    let weight = iterator.monster.weight != "" ? "weight" : ""
-    let weightUnit = iterator.monster.weightUnit != "" ? "weightUnit" : ""
-    let height = iterator.monster.height != "" ? "height" : ""
-    let heightUnit = iterator.monster.heightUnit != "" ? "heightUnit" : ""
-    let birth = iterator.monster.birth != "" ? "birth" : ""
-    let pog = iterator.monster.pog != "" ? "place of origin" : ""
-    let ability = iterator.monster.ability != "" ? "ability" : ""
-    let creator = iterator.monster.creator != "" ? "creator" : ""
-    let history = iterator.monster.history != "" ? "history" : ""
-    let about = iterator.monster.about != "" ? "about" : ""
+    let appearance = iterator.monster.appearance == "" ? "" : "appearance"
+    let weight = iterator.monster.weight == "" ? "" : "weight"
+    let weightUnit = iterator.monster.weight == "" ? "" : iterator.monster.weightUnit
+    let height = iterator.monster.height == "" ? "" : "height"
+    let heightUnit = iterator.monster.height == "" ? "" : iterator.monster.heightUnit
+    let birth = iterator.monster.birth == "" ? "" : "birth"
+    let aBirth = birth < 1 ? "" : iterator.monster.birth
+    let pog = iterator.monster.pog == "" ? "" : "place of origin"
+    let ability = iterator.monster.ability == "" ? "" : "ability"
+    let creator = iterator.monster.creator == "" ? "" : "creator"
+    let history = iterator.monster.history == "" ? "" : "history"
+    let about = iterator.monster.about == "" ? "" : "about"
 
 
 
@@ -124,7 +124,7 @@ function appendProfile(bejon) {
 
 
       let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
-
+      let aAge = birth == "" ? "" : `(${age} years old)`
       let e = new Date(iterator.monster.birth.seconds).getMonth()
 
       let appearancess = iterator.monster.appearance;
@@ -133,7 +133,9 @@ function appendProfile(bejon) {
       let toList = (inArray) => {
         let templt = ``
         for (const gpard of inArray) {
-          templt += `${gpard}<br>`;
+
+          if (gpard.innerHTML != "" || gpard.innerHTML != " ")
+            templt += `${gpard}<br>`;
 
         }
         return templt
@@ -153,15 +155,15 @@ function appendProfile(bejon) {
 
               <tr>
                   <td>${height}</td>
-                  <td>${iterator.monster.height} ${iterator.monster.heightUnit}</td>
+                  <td>${iterator.monster.height} ${heightUnit}</td>
               </tr>
               <tr>
                   <td>${weight}</td>
-                  <td>${iterator.monster.weight}</td>
+                  <td>${iterator.monster.weight} ${weightUnit}</td>
               </tr>
               <tr>
                   <td>${birth}</td>
-                  <td>${iterator.monster.birth} (${age} years old)</td>
+                  <td>${aBirth} ${aAge}</td>
               </tr>
               <tr>
                   <td>${pog}</td>
@@ -190,10 +192,20 @@ function appendProfile(bejon) {
           <h2>${about}</h2>
           <p>${iterator.monster.about}</p>
       </div>`
+
     }
   }
-  document.querySelector(".content-container").innerHTML = htmlTemplate;
 
+
+  document.querySelector(".content-container").innerHTML = htmlTemplate;
+  let segedtomb = document.querySelectorAll('td')
+  for (const elem of segedtomb) {
+    // console.log(elem.children[0] && elem.children[1]);
+    if (elem.innerHTML == "" || elem.innerHTML == " " || elem.innerHTML == "  " || elem.innerHTML.includes(" <br>")) {
+      console.log(elem);
+      elem.parentElement.remove()
+    }
+  }
 }
 
 window.addEventListener('scroll', () => {

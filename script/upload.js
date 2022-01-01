@@ -184,7 +184,7 @@ function fireStoreUpload() {
                     appearance: appearance,
                     height: height,
                     heightUnit: heightUnit,
-                    weight: weight + weightUnit,
+                    weight: weight,
                     weightUnit: weightUnit,
                     birth: birth,
                     stringBirth: stringBirth,

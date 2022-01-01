@@ -41,12 +41,6 @@
   transition: 1s;
   border-image: linear-gradient(to right, #070707, rgba(235, 235, 235, 0)) 1 100%;
 }
-.header-bar button {
-  border: none;
-  background: none;
-  text-decoration: none;
-  color: #707070;
-}
 
 .scroll-header-shrinker {
   height: 50px;
@@ -201,6 +195,15 @@ nav p:hover {
   font-family: sans-serif;
   font-size: 14px;
   line-height: 22px;
+}
+
+.upload-btn-dstp {
+  position: absolute;
+  right: 50px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: #707070;
 }
 
 h1 {
