@@ -118,6 +118,11 @@ nav p:hover {
   color: #242424;
 }
 
+.item-title-container label {
+  cursor: pointer;
+  z-index: 35;
+}
+
 .content-container {
   height: auto;
   width: 900px;
@@ -211,7 +216,11 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 600px) {
+#mobileicon {
+  display: none;
+}
+
+@media screen and (max-width: 1260px) {
   nav {
     background-color: white;
     width: 300px;
@@ -226,13 +235,16 @@ a {
 
   .nav-open {
     left: 0;
+    padding-top: 62px;
   }
 
   .ham-cont {
-    z-index: 6;
+    z-index: 3;
     top: 64px;
     left: 20px;
     position: fixed;
+    cursor: pointer;
+    height: 40px;
   }
 
   .ham-menu-line {
@@ -273,21 +285,17 @@ a {
   .linea-rot {
     transform: rotate(45deg);
     top: 12px;
-    left: 225px;
     transition: 0.5s all;
-    background-color: #c09a67;
   }
 
   .lineb-rot {
     transform: rotate(-45deg);
     top: 12px;
-    left: 225px;
     transition: 0.5s all;
-    background-color: #c09a67;
   }
 
   .line-rot {
-    left: -60px;
+    left: -360px;
     transition: all 0.5s;
   }
 
@@ -310,6 +318,44 @@ a {
 
   .headercompletor {
     height: 8px;
+  }
+
+  main {
+    padding-top: 60px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .content-container {
+    height: auto;
+    /* width: 70vw; */
+    right: 50%;
+    transform: translateX(50%);
+    /* margin-right: -20px; */
+    padding-bottom: 80px;
+    position: absolute;
+    display: grid;
+    grid-template-areas: "top " "left " "right " "bottom ";
+  }
+  .content-container .div-top {
+    grid-area: top;
+    width: 100%;
+    min-height: 60px;
+    background-color: #757575;
+    display: inline;
+  }
+  .content-container .div-top h1 {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+  }
+  .content-container .div-right,
+.content-container .div-left {
+    width: 100%;
+  }
+  .content-container .div-left {
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 }
 

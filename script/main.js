@@ -1,37 +1,5 @@
 "use strict";
 
-// hamburger navigacio 
-let cbOpen = true;
-function hamburgerNav() {
-
-  if (cbOpen == false)//ha zarva van
-  {
-    document.querySelector(".nnav").classList.remove("nav-open");
-    document.querySelector(".ham-menu-line").classList.remove("line-rot");
-    document.querySelector(".ham-menu-linea").classList.remove("linea-rot");
-    document.querySelector(".ham-menu-lineb").classList.remove("lineb-rot");
-
-    cbOpen = true;
-  }
-  else if (cbOpen == true) {
-
-    document.querySelector(".nnav").classList.add("nav-open");
-    document.querySelector(".ham-menu-line").classList.add("line-rot");
-    document.querySelector(".ham-menu-linea").classList.add("linea-rot");
-    document.querySelector(".ham-menu-lineb").classList.add("lineb-rot");
-
-
-    document.querySelector(".nnav").addEventListener('click', function () {
-      document.querySelector(".nnav").classList.remove("nav-open");
-      document.querySelector(".ham-menu-line").classList.remove("line-rot");
-      document.querySelector(".ham-menu-linea").classList.remove("linea-rot");
-      document.querySelector(".ham-menu-lineb").classList.remove("lineb-rot");
-      cbOpen = true;
-    });
-    cbOpen = false;
-  }
-}
-
 // let database = [];
 
 // async function loadData() {
@@ -110,7 +78,7 @@ function appendNav(items) {
   let temlplete = ""
 
   for (let item of items) {
-    temlplete += `<p class="navAppended">${item.monster.mname}</p> `
+    temlplete += `<label for="mobileicon"><p class="navAppended">${item.monster.mname}</p></label> `
 
   }
   // onclick="appendProfile(${item.id})"
@@ -156,9 +124,20 @@ function appendProfile(bejon) {
 
 
       let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
-      // let e = new Date(iterator.monster.birth / 100).getFullYear()
+
       let e = new Date(iterator.monster.birth.seconds).getMonth()
-      console.log(e);
+
+      let appearancess = iterator.monster.appearance;
+      console.log(appearancess);
+
+      let toList = (inArray) => {
+        let templt = ``
+        for (const gpard of inArray) {
+          templt += `${gpard}<br>`;
+
+        }
+        return templt
+      }
 
       htmlTemplate = `
 
@@ -169,7 +148,7 @@ function appendProfile(bejon) {
           <table>
               <tr>
                   <td>${appearance}</td>
-                  <td>$ ${iterator.monster.appearance}</td>
+                  <td>${toList(iterator.monster.appearance)}</td>
               </tr>
 
               <tr>
@@ -190,11 +169,11 @@ function appendProfile(bejon) {
               </tr>
               <tr>
                   <td>${ability}</td>
-                  <td>${iterator.monster.ability}</td>
+                  <td>${toList(iterator.monster.ability)}</td>
               </tr>
               <tr>
                   <td>${creator}</td>
-                  <td>${iterator.monster.creator}<br></td>
+                  <td>${toList(iterator.monster.creator)}</td>
               </tr>
           </table>
       </div>

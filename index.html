@@ -27,12 +27,13 @@
             <div class="item-title-container"></div>
 
         </nav>
-        <div class="ham-cont" onclick="hamburgerNav()">
+        <label for="mobileicon" class="ham-cont">
+            <input id="mobileicon" type="checkbox">
             <label for="mobileicon" class="ham-menu-lineb"></label>
             <label for="mobileicon" class="ham-menu-line"></label>
             <label for="mobileicon" class="ham-menu-linea"></label>
 
-        </div>
+        </label>
         <div class="content-container">
 
             <div class="div-top">
@@ -107,6 +108,7 @@
     </main>
 
     <script type="module" src="script/main.js"></script>
+    <script src="script/nav.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
