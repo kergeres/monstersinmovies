@@ -20,7 +20,7 @@ $border: 1px solid black;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 /* Track */
@@ -112,8 +112,8 @@ nav {
   border-image: linear-gradient(to top, #070707, rgba(235, 235, 235, 0)) 1 100%;
 }
 nav p {
-  margin-bottom: 5px;
-  font-size: 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
   line-height: 16px;
   cursor: pointer;
   font-family: "roboto";
@@ -185,7 +185,6 @@ nav p {
   }
   .div-right {
     grid-area: right;
-
     width: 450px;
     height: 400px;
     background-color: $mid-brown;
@@ -257,6 +256,14 @@ a {
     z-index: 3;
     top: 0;
     box-shadow: 2px 3px 12px -3px rgba(0, 0, 0, 0.3);
+    p {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  }
+  .search-input {
+    height: 36px;
+    font-size: 24px;
   }
 
   .nav-open {
@@ -266,7 +273,7 @@ a {
 
   .ham-cont {
     z-index: 3;
-    top: 64px;
+    top: 62px;
     left: 20px;
     position: fixed;
     cursor: pointer;
@@ -278,7 +285,7 @@ a {
     cursor: pointer;
     height: 5px;
     position: relative;
-    width: 40px;
+    width: 30px;
     top: 10px;
     right: 0px;
     display: block;
@@ -306,11 +313,13 @@ a {
 
   .ham-menu-linea {
     top: 20px;
+    width: 20px;
   }
 
   .linea-rot {
     transform: rotate(45deg);
     top: 12px;
+    width: 40px;
     // left: 225px;
     transition: 0.5s all;
     // background-color: #c09a67;
@@ -336,7 +345,7 @@ a {
   }
 
   .content-container p {
-    width: 90%;
+    // width: 90%;
     margin: 0 auto;
   }
 
@@ -350,11 +359,14 @@ a {
     height: 8px;
   }
   main {
-    padding-top: 60px;
+    padding-top: 0px;
   }
 }
 
 @media screen and (max-width: 1260px) {
+  .search-input {
+    width: 190px;
+  }
   .content-container {
     height: auto;
     /* width: 70vw; */
@@ -381,6 +393,11 @@ a {
         position: relative;
       }
     }
+
+    .div-left {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
     .div-right,
     .div-left {
       width: 100%;
@@ -389,6 +406,36 @@ a {
       align-items: center;
       display: flex;
       justify-content: center;
+    }
+    .div-bottom {
+      padding: 5px;
+    }
+  }
+  .div-right {
+    height: 360px !important;
+    text-align: center;
+    img {
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .div-right {
+    max-height: 80vh;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      top: unset;
+      transform: unset;
+      position: relative;
     }
   }
 }

@@ -25,15 +25,6 @@ const db = firebase.firestore();
 const firebaseMonstersRef = db.collection("monsters");
 const firebaseToUpload = db.collection("toUpload");
 
-firebaseMonstersRef.onSnapshot(function (snapshotData) {
-
-    snapshotData.forEach(doc => {
-        let ex = doc.data();
-        // console.log(`${ex} es igen`);
-
-    });
-});
-
 // create new input for appearance, creator etc
 
 // for appearance button
@@ -170,7 +161,7 @@ function fireStoreUpload() {
         let about = document.querySelector('#about').value
         // let extlinks = document.querySelector('#extlinks').value
 
-        firebaseMonstersRef.doc().set(
+        firebaseToUpload.doc().set(
             {
                 exTime: extime,
                 time: extime,
