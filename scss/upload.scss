@@ -61,6 +61,9 @@ body {
     top: 4px;
     color: #354e4f;
   }
+  label[for="email"] {
+    left: -300px !important;
+  }
   input {
     width: 180px;
     padding-left: 7px;
@@ -398,12 +401,12 @@ label {
   left: 1px !important;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 768px) {
   .upload-form {
-    width: 90vw;
+    width: 98vw;
   }
   .user-field {
-    width: 95vw;
+    width: 98vw;
     padding: 15px;
     grid-template-areas:
       "firstname"
@@ -429,17 +432,44 @@ label {
       "extlinks"
       "history"
       "about "
-      "submit ";
+      "submit";
   }
   div {
-    width: 80vw !important;
-    input,
+    max-width: 95vw !important;
+    input:not(#dd, #mm, #yyyy),
     textarea {
-      width: 70vw !important;
+      width: 260px !important;
+    }
+  }
+  button:not(#submit) {
+    left: unset;
+    // right: -66px;
+    top: 30px;
+  }
+  .input-container-small {
+    select {
+      right: -17px;
     }
   }
   #submit {
-    right: 50%;
-    position: absolute;
+    left: 1vw;
+  }
+  .content-field {
+    .input-container,
+    .input-container-small {
+      border: $border;
+      width: 90% !important;
+      min-width: unset;
+    }
+  }
+  #appearance-btn {
+    right: unset !important;
+  }
+  .user-field {
+    .input-container {
+      border: $border;
+      width: 100% !important;
+      min-width: unset;
+    }
   }
 }

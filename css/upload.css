@@ -64,6 +64,9 @@ body {
   top: 4px;
   color: #354e4f;
 }
+.user-field label[for=email] {
+  left: -300px !important;
+}
 .user-field input {
   width: 180px;
   padding-left: 7px;
@@ -400,13 +403,13 @@ label {
   left: 1px !important;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 768px) {
   .upload-form {
-    width: 90vw;
+    width: 98vw;
   }
 
   .user-field {
-    width: 95vw;
+    width: 98vw;
     padding: 15px;
     grid-template-areas: "firstname" "lastname" "email" "uAge";
   }
@@ -414,20 +417,45 @@ label {
   .content-field {
     width: 95vw;
     padding: 32px 16px;
-    grid-template-areas: "imgToUpload" "mname" "appearance" "appearance" "height" "weight" "birth" "age" "ability" "pog" "creator" "extlinks" "history" "about " "submit ";
+    grid-template-areas: "imgToUpload" "mname" "appearance" "appearance" "height" "weight" "birth" "age" "ability" "pog" "creator" "extlinks" "history" "about " "submit";
   }
 
   div {
-    width: 80vw !important;
+    max-width: 95vw !important;
   }
-  div input,
+  div input:not(#dd, #mm, #yyyy),
 div textarea {
-    width: 70vw !important;
+    width: 260px !important;
+  }
+
+  button:not(#submit) {
+    left: unset;
+    top: 30px;
+  }
+
+  .input-container-small select {
+    right: -17px;
   }
 
   #submit {
-    right: 50%;
-    position: absolute;
+    left: 1vw;
+  }
+
+  .content-field .input-container,
+.content-field .input-container-small {
+    border: 1px solid black;
+    width: 90% !important;
+    min-width: unset;
+  }
+
+  #appearance-btn {
+    right: unset !important;
+  }
+
+  .user-field .input-container {
+    border: 1px solid black;
+    width: 100% !important;
+    min-width: unset;
   }
 }
 
