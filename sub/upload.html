@@ -39,6 +39,7 @@
 
             <div class="content-field">
                 <input id="img-to-upload" type="file">
+                <label for="img-to-upload">Choose image</label>
                 <div class="input-container mname-container">
                     <input required id="mname" type="text" name="mname" autocomplete="of">
                     <label class="addAble" for="mname">Creature's name</label>
@@ -83,11 +84,15 @@
 
                 </div>
                 <div class="input-container-small birth-container">
-                    <input minlength="2" maxlength="2" placeholder="dd" id="dd" type="text" name="dd" autocomplete="of">
-                    <input minlength="2" maxlength="2" placeholder="mm" id="mm" type="text" name="mm" autocomplete="of">
-                    <input minlength="4" maxlength="4" placeholder="yyyy" id="yyyy" type="text" name="yyyy"
-                        autocomplete="of">
-                    <label class="addAble" for="dd">birth</label>
+                    <div class="birth-container-small">
+                        <input minlength="2" maxlength="2" placeholder="dd" id="dd" type="text" name="dd"
+                            autocomplete="of">
+                        <input minlength="2" maxlength="2" placeholder="mm" id="mm" type="text" name="mm"
+                            autocomplete="of">
+                        <input minlength="4" maxlength="4" placeholder="yyyy" id="yyyy" type="text" name="yyyy"
+                            autocomplete="of">
+                    </div>
+                    <label class="addAble" for="birth">birth</label>
                 </div>
                 <div class="input-container-small pog-container">
                     <input id="pog" type="text" name="pog" autocomplete="of">

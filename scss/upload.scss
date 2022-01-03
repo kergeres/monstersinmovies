@@ -31,6 +31,9 @@ main {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+input {
+  margin-bottom: 8px;
+}
 
 .upload-form {
   width: auto;
@@ -52,38 +55,26 @@ body {
   display: grid;
   grid-template-areas:
     "firstname firstname lastname lastname"
-    "email email email uAge";
-  label {
-    margin-right: 20px;
-    display: inline-block;
-    left: -180px;
-    position: relative;
-    top: 4px;
-    color: #354e4f;
-  }
-  label[for="email"] {
-    left: -300px !important;
-  }
+    "email email uAge uAge";
+
   input {
     width: 180px;
     padding-left: 7px;
     font-size: 16px;
     height: 40px;
-    float: left;
-    display: block;
-    top: 25px;
     color: #424242;
-    position: relative;
     border: 1px solid #354e4f;
     background-color: lighten($user-field-bgco, 80%);
     border-radius: 1px;
   }
   .input-container {
-    //
-    clear: both;
-    min-width: 386px;
-    display: inline-block;
-    height: 85px;
+    display: grid;
+
+    width: 303px;
+    height: 60px;
+    button {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -93,15 +84,10 @@ body {
 
 label {
   text-transform: lowercase;
+  height: 20px;
+  color: #354e4f;
 }
-#dd,
-#mm {
-  width: 48px;
-  margin-right: 5px;
-}
-#yyyy {
-  width: 96px;
-}
+
 #extracontainer-appearance {
   width: auto;
   display: none;
@@ -117,10 +103,8 @@ label {
   padding: 72px 42px 32px 72px;
   display: grid;
   grid-template-areas:
-    "imgToUpload imgToUpload imgToUpload space"
-    "mname mname mname space"
-    "appearance appearance appearance ."
-    "appearance appearance appearance ."
+    "imgToUpload imgToUpload imgToUpload ."
+    "mname mname appearance appearance"
     "height height weight weight"
     "age age birth birth"
     "pog pog ability ability"
@@ -128,35 +112,20 @@ label {
     "history history history history"
     "about about about about"
     ". . . submit  ";
-  // "appearance appearance appearance appearance";
-  //
-  .input-container {
-    //
-    padding-bottom: 25px;
 
-    width: 465px;
-    // display: inline-block;
-    min-height: 85px;
+  .input-container {
+    width: 323px;
+    min-height: 60px;
     label {
       margin-right: 20px;
-      display: inline-block;
-      left: -370px;
-      position: relative;
-      top: 4px;
-      color: #354e4f;
       width: 140px;
     }
     input {
-      margin-top: 5px;
-      width: 370px;
+      width: 250px;
       padding-left: 7px;
       font-size: 16px;
       height: 40px;
-      float: left;
-      display: block;
-      top: 25px;
       color: #424242;
-      position: relative;
       border: 1px solid #354e4f;
       background-color: lighten($user-field-bgco, 80%);
       border-radius: 1px;
@@ -165,11 +134,6 @@ label {
     button {
       height: 40px;
       width: 40px;
-      position: relative;
-
-      top: -14px;
-      right: -226px;
-
       cursor: pointer;
       background-color: #6b8485;
       border: 1px solid #354e4f;
@@ -180,33 +144,22 @@ label {
       }
     }
   }
-  #ability-container,
-  #creator-container,
-  #extlinks-container {
-    width: 300px;
-    .ability,
-    .creator {
-      margin-top: 5px;
-    }
-    label {
-      left: 0px;
-      position: relative;
-      top: -45px;
-    }
-  }
+  // #ability-container,
+  // #creator-container,
+  // #extlinks-container {
+  //   width: 300px;
+  //   .ability,
+  //   .creator {
+  //     margin-top: 5px;
+  //   }
+  // }
 
   .input-container-small {
-    clear: both;
-    min-width: 265px;
-    display: inline-block;
-    min-height: 85px;
-    position: relative;
+    width: 300px;
+    min-height: 60px;
+    display: grid;
+    margin-top: 24px;
     label {
-      margin-right: 20px;
-      display: inline-block;
-      left: -180px;
-      position: relative;
-      top: 5px;
       color: #354e4f;
       width: 140px;
     }
@@ -215,21 +168,15 @@ label {
       padding-left: 7px;
       font-size: 16px;
       height: 40px;
-      float: left;
-      display: block;
-      top: 25px;
+
       color: #424242;
-      position: relative;
       border: 1px solid #354e4f;
       background-color: lighten($user-field-bgco, 80%);
       border-radius: 1px;
     }
     select {
       height: 40px;
-      width: 90px;
-      position: relative;
-      top: 7px;
-      right: -21px;
+      width: 112px;
       cursor: pointer;
       background-color: #6b8485;
       border: 1px solid #354e4f;
@@ -243,14 +190,12 @@ label {
     button {
       height: 40px;
       width: 40px;
-      position: relative;
-      top: -15px;
-      left: 33px;
       cursor: pointer;
       background-color: #6b8485;
       border: 1px solid #354e4f;
       color: #424242;
       border-radius: 2px;
+      margin-left: 10px;
       &:hover {
         background-color: darken(#6b8485, 3);
       }
@@ -260,110 +205,289 @@ label {
 
 .firstname-container {
   grid-area: firstname;
+  display: grid;
+  grid-template-areas:
+    "labelfirstname"
+    "inputfirstname";
+
+  label {
+    grid-area: labelfirstname;
+  }
+  input {
+    grid-area: inputfirstname;
+  }
 }
 .lastname-container {
   grid-area: lastname;
+  display: grid;
+  grid-template-areas:
+    "labellastname"
+    "inputlastname";
+
+  label {
+    grid-area: labellastname;
+  }
+  input {
+    grid-area: inputlastname;
+  }
 }
 .email-container {
   grid-area: email;
+  display: grid;
+  grid-template-areas:
+    "labelemail"
+    "inputemail";
+
+  label {
+    grid-area: labelemail;
+  }
+  input {
+    grid-area: inputemail;
+  }
 }
+.uAge-container {
+  grid-area: uAge;
+  display: grid;
+  grid-template-areas:
+    "labeluage"
+    "inputuage";
+
+  label[for="uAge"] {
+    grid-area: labeluage;
+  }
+  input {
+    grid-area: inputuage;
+  }
+}
+
 .mname-container {
+  grid-template-rows: 20px 50px;
+  display: grid;
   grid-area: mname;
-}
-.space {
-  grid-area: space;
+  grid-template-areas:
+    "labelmname"
+    "inputmname";
+
+  label[for="mname"] {
+    grid-area: labelmname;
+  }
+  input {
+    grid-area: inputmname;
+    width: 302px !important;
+  }
 }
 .appearance-container {
+  display: grid;
+
+  grid-template-rows: 20px 50px;
+  grid-template-columns: 250px 50px;
   grid-area: appearance;
+  grid-template-areas:
+    "labelappearance ."
+    "inputappearance buttonappearance"
+    "extracontainerappearance .";
+
+  label[for="appearance"] {
+    grid-area: labelappearance;
+  }
+  input {
+    grid-area: inputappearance;
+  }
+  button {
+    grid-area: buttonappearance;
+    margin-left: 10px;
+  }
+
+  #extracontainer-appearance {
+    grid-area: extracontainerappearance;
+  }
 }
 .height-container {
   grid-area: height;
+  grid-template-columns: 180px 100px;
+  grid-template-areas:
+    "heightlabel ."
+    "heightInput selectHeightUnit";
+
+  label [for="height"] {
+    grid-area: heightlabel;
+  }
+  #height {
+    grid-area: heightInput;
+  }
+  #heightUnit {
+    grid-area: selectHeightUnit;
+    margin-left: 10px;
+  }
 }
 .weight-container {
   grid-area: weight;
+  grid-template-columns: 180px 100px;
+  grid-template-areas:
+    "weightlabel ."
+    "weightInput selectWeightUnit";
+
+  label [for="weight"] {
+    grid-area: weightlabel;
+  }
+  #weight {
+    grid-area: weightInput;
+  }
+  #weightUnit {
+    grid-area: selectWeightUnit;
+    margin-left: 10px;
+  }
 }
 .age-container {
   grid-area: age;
+  grid-template-areas:
+    "agelabel "
+    "ageInput";
+  grid-template-rows: 20px 40px;
+  height: 60px;
+
+  label [for="age"] {
+    grid-area: agelabel;
+  }
+  #age {
+    grid-area: ageInput;
+  }
 }
 .birth-container {
   grid-area: birth;
+  grid-template-areas:
+    "birthlabel "
+    "bcs";
+  // grid-template-rows: 20px 40px;
+  // height: 60px;
+  .birth-container-small {
+    grid-area: bcs;
+    grid-template-areas: "dd mm yy";
+  }
+  label [for="birth"] {
+    grid-area: birthlabel;
+  }
+  #dd {
+    grid-area: dd;
+    width: 50px;
+  }
+  #mm {
+    grid-area: mm;
+    width: 50px;
+  }
+  #yyyy {
+    grid-area: yyyy;
+    width: 70px;
+  }
 }
 .pog-container {
   grid-area: pog;
+  grid-template-rows: 20px 40px;
+  height: 60px;
+
+  grid-template-areas:
+    "poglabel "
+    "poginput";
+  label [for="pog"] {
+    grid-area: poglabel;
+  }
+  input {
+    grid-area: poginput;
+  }
 }
 .ability-container {
   grid-area: ability;
+  grid-template-columns: 180px 50px;
+  grid-template-areas:
+    "abilitylabel ."
+    "abilityinput abilitybutton"
+    "abilityextracontainer .";
+
+  label [for="ability"] {
+    grid-area: abilitylabel;
+  }
+  input {
+    grid-area: abilityinput;
+  }
+  button {
+    grid-area: abilitybutton;
+  }
+  #extracontainer-ability {
+    grid-area: abilityextracontainer;
+  }
 }
 .creator-container {
   grid-area: creator;
-}
-.history-container {
-  grid-area: history;
-  width: 700px;
-  display: inline-block;
-  min-height: 85px;
-  position: relative;
-}
+  grid-template-columns: 180px 50px;
+  grid-template-rows: 20px 50px;
+  grid-template-areas:
+    "creatorlabel ."
+    "creatorinput creatorbutton"
+    "creatorextracontainer .";
 
-.history-container {
-  label {
-    margin-right: 20px;
-    display: inline-block;
-    left: 0px;
-    position: relative;
-    top: -157px;
-    color: #354e4f;
-    width: 140px;
-    margin-bottom: 26px;
+  label [for="creator"] {
+    grid-area: creatorlabel;
   }
-  textarea {
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 160px;
-    // resize: initial;
-    margin-top: 5px;
-    width: 678px;
-    padding: 7px;
-    font-size: 16px;
+  input {
+    grid-area: creatorinput;
+  }
+  button {
+    grid-area: creatorbutton;
+  }
+  #extracontainer-creator {
+    grid-area: creatorextracontainer;
+  }
+}
 
-    text-align: start;
-    display: flex;
-    // line-height: 14px;
-    vertical-align: top;
-    top: 25px;
-    color: #424242;
-    position: relative;
-    border: 1px solid #354e4f;
-    background-color: lighten($user-field-bgco, 80%);
-    border-radius: 1px;
+.extlinks-container {
+  grid-area: extlinks;
+  grid-template-columns: 180px 50px;
+  grid-template-rows: 20px 50px;
+  grid-template-areas:
+    "extlinkslabel ."
+    "extlinksinput extlinksbutton"
+    "extlinksextracontainer .";
+
+  label [for="extlinks"] {
+    grid-area: extlinkslabel;
+  }
+  input {
+    grid-area: extlinksinput;
+  }
+  button {
+    grid-area: extlinksbutton;
+  }
+  #extracontainer-extlinks {
+    grid-area: extlinksextracontainer;
   }
 }
 
 .about-container {
-  margin-bottom: 30px;
-  label {
+  grid-area: about;
+  display: grid;
+  grid-template-areas:
+    "aboutlabel ."
+    " aboutinput aboutinput";
+
+  label [for="about"] {
+    grid-area: aboutlabel;
     margin-right: 20px;
     display: inline-block;
     left: 0px;
-    position: relative;
     top: -154px;
     color: #354e4f;
     width: 140px;
     margin-bottom: 26px;
   }
   textarea {
+    grid-area: aboutinput;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 160px;
-    // resize: initial;
-    margin-top: 5px;
     width: 678px;
     padding: 7px;
     font-size: 16px;
-
-    text-align: start;
-    display: flex;
     // line-height: 14px;
     vertical-align: top;
-    top: 25px;
     color: #424242;
     position: relative;
     border: 1px solid #354e4f;
@@ -371,24 +495,69 @@ label {
     border-radius: 1px;
   }
 }
-.extlinks-container {
-  grid-area: extlinks;
-}
 
-.u-age-container {
-  grid-area: uAge;
-}
-.about-container {
-  grid-area: about;
+.history-container {
+  grid-area: history;
+  display: grid;
+  grid-template-areas:
+    "historylabel ."
+    " historyinput historyinput";
+  label [for="history"] {
+    grid-area: historylabel;
+    margin-right: 20px;
+    display: inline-block;
+    left: 0px;
+    top: -154px;
+    color: #354e4f;
+    width: 140px;
+    margin-bottom: 26px;
+  }
+  textarea {
+    grid-area: historyinput;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 160px;
+    width: 678px;
+    padding: 7px;
+    font-size: 16px;
+    // line-height: 14px;
+    vertical-align: top;
+    color: #424242;
+    position: relative;
+    border: 1px solid #354e4f;
+    background-color: lighten($user-field-bgco, 80%);
+    border-radius: 1px;
+  }
 }
 #img-to-upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+label[for="img-to-upload"] {
   grid-area: imgToUpload;
+  height: 40px;
+  width: 160px;
+  cursor: pointer;
+  padding-left: 15px;
+  background-color: #b3b3b3;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 1px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
 #submit {
   grid-area: submit;
   width: 90px;
   height: 40px;
-  right: 52px;
+  margin-top: 24px;
+  right: 29px;
   position: relative;
   cursor: pointer;
 }
@@ -401,7 +570,7 @@ label {
   left: 1px !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 852px) {
   .upload-form {
     width: 98vw;
   }
@@ -415,7 +584,7 @@ label {
       "uAge";
   }
   .content-field {
-    width: 95vw;
+    width: 98vw;
     padding: 32px 16px;
     grid-template-areas:
       "imgToUpload"
@@ -434,42 +603,66 @@ label {
       "about "
       "submit";
   }
-  div {
-    max-width: 95vw !important;
-    input:not(#dd, #mm, #yyyy),
-    textarea {
-      width: 260px !important;
-    }
-  }
-  button:not(#submit) {
-    left: unset;
-    // right: -66px;
-    top: 30px;
-  }
+
+  .input-container,
   .input-container-small {
-    select {
-      right: -17px;
-    }
+    width: 90vw !important;
   }
-  #submit {
-    left: 1vw;
+  input:not(#dd, #mm, #yyyy, #age),
+  textarea {
+    width: 100% !important;
   }
-  .content-field {
-    .input-container,
-    .input-container-small {
-      border: $border;
-      width: 90% !important;
-      min-width: unset;
-    }
+  // div {
+  //   max-width: 95vw !important;
+  //   input:not(#dd, #mm, #yyyy),
+  //
+  //   }
+  // }
+  // button:not(#submit) {
+  //   // left: -148px;
+  //   // right: -66px;
+  //   // top: 30px;
+  //   position: relative;
+  // }
+  // .input-container-small {
+  //   select {
+  //     right: -17px;
+  //   }
+  // }
+  // label {
+  //   height: 20px;
+  //   position: relative;
+  // }
+  // #submit {
+  //   left: 1vw;
+  // }
+  // .content-field {
+  //   .input-container,
+  //   .input-container-small {
+  //     border: $border;
+  //     width: 90% !important;
+  //     min-width: unset;
+  //     display: flex;
+  //   }
+  // }
+  // .height-container #appearance-btn {
+  //   right: unset !important;
+  // }
+  // .user-field {
+  //   .input-container {
+  //     border: $border;
+  //     width: 100% !important;
+  //     min-width: unset;
+  //   }
+  // }
+  .height-container,
+  .weight-container {
+    grid-template-columns: auto 122px;
   }
-  #appearance-btn {
-    right: unset !important;
-  }
-  .user-field {
-    .input-container {
-      border: $border;
-      width: 100% !important;
-      min-width: unset;
-    }
+  .ability-container,
+  .creator-container,
+  .extlinks-container,
+  .appearance-container {
+    grid-template-columns: auto 50px;
   }
 }
