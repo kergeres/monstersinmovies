@@ -14,10 +14,6 @@
   font-style: italic;
 }
 
-main {
-  padding-top: 80px;
-}
-
 .bg-container {
   background-image: url("/img/upload-bg.jpg");
   filter: blur(8px);
@@ -53,12 +49,13 @@ input {
   margin: 0 auto;
   width: 843px;
   min-height: 230px;
-  padding: 72px 0px 43px 72px;
+  padding: 55px 0px 43px 72px;
   background-color: rgba(95, 158, 160, 0.7);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: grid;
-  grid-template-areas: "firstname firstname lastname lastname" "email email uAge uAge";
+  grid-template-columns: auto 182px auto;
+  grid-template-areas: "firstname . lastname " "email . uAge ";
 }
 .user-field input {
   width: 180px;
@@ -72,11 +69,17 @@ input {
 }
 .user-field .input-container {
   display: grid;
+  margin-top: 12px;
   width: 303px;
-  height: 60px;
+  height: 65px;
 }
 .user-field .input-container button {
   margin-left: 10px;
+}
+
+a:visited {
+  text-decoration: cone;
+  color: unset;
 }
 
 #email {
@@ -85,8 +88,12 @@ input {
 
 label {
   text-transform: lowercase;
-  height: 20px;
+  height: 24px;
   color: #354e4f;
+}
+
+textarea {
+  border-radius: 2px;
 }
 
 #extracontainer-appearance {
@@ -104,7 +111,7 @@ label {
   margin: 0 auto;
   padding: 72px 42px 32px 72px;
   display: grid;
-  grid-template-areas: "imgToUpload imgToUpload imgToUpload ." "mname mname appearance appearance" "height height weight weight" "age age birth birth" "pog pog ability ability" "creator creator extlinks extlinks" "history history history history" "about about about about" ". . . submit  ";
+  grid-template-areas: "imgToUpload imgToUpload imgToUpload ." "mname mname appearance appearance" "height height weight weight" "age age birth birth" "pog pog ability ability" "creator creator extlinks extlinks" "history history history history" "about about about about" "submit submit submit submit   ";
 }
 .content-field .input-container {
   width: 323px;
@@ -140,7 +147,7 @@ label {
   width: 300px;
   min-height: 60px;
   display: grid;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 .content-field .input-container-small label {
   color: #354e4f;
@@ -232,7 +239,7 @@ label {
 }
 
 .mname-container {
-  grid-template-rows: 20px 50px;
+  grid-template-rows: 23px 50px;
   display: grid;
   grid-area: mname;
   grid-template-areas: "labelmname" "inputmname";
@@ -247,7 +254,7 @@ label {
 
 .appearance-container {
   display: grid;
-  grid-template-rows: 20px 50px;
+  grid-template-rows: 23px 50px;
   grid-template-columns: 250px 50px;
   grid-area: appearance;
   grid-template-areas: "labelappearance ." "inputappearance buttonappearance" "extracontainerappearance .";
@@ -301,7 +308,7 @@ label {
 .age-container {
   grid-area: age;
   grid-template-areas: "agelabel " "ageInput";
-  grid-template-rows: 20px 40px;
+  grid-template-rows: 23px 40px;
   height: 60px;
 }
 .age-container label [for=age] {
@@ -337,7 +344,7 @@ label {
 
 .pog-container {
   grid-area: pog;
-  grid-template-rows: 20px 40px;
+  grid-template-rows: 23px 40px;
   height: 60px;
   grid-template-areas: "poglabel " "poginput";
 }
@@ -369,7 +376,7 @@ label {
 .creator-container {
   grid-area: creator;
   grid-template-columns: 180px 50px;
-  grid-template-rows: 20px 50px;
+  grid-template-rows: 23px 50px;
   grid-template-areas: "creatorlabel ." "creatorinput creatorbutton" "creatorextracontainer .";
 }
 .creator-container label [for=creator] {
@@ -388,7 +395,7 @@ label {
 .extlinks-container {
   grid-area: extlinks;
   grid-template-columns: 180px 50px;
-  grid-template-rows: 20px 50px;
+  grid-template-rows: 23px 50px;
   grid-template-areas: "extlinkslabel ." "extlinksinput extlinksbutton" "extlinksextracontainer .";
 }
 .extlinks-container label [for=extlinks] {
@@ -408,6 +415,7 @@ label {
   grid-area: about;
   display: grid;
   grid-template-areas: "aboutlabel ." " aboutinput aboutinput";
+  margin-top: 32px;
 }
 .about-container label [for=about] {
   grid-area: aboutlabel;
@@ -431,13 +439,14 @@ label {
   position: relative;
   border: 1px solid #354e4f;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 .history-container {
   grid-area: history;
   display: grid;
   grid-template-areas: "historylabel ." " historyinput historyinput";
+  margin-top: 32px;
 }
 .history-container label [for=history] {
   grid-area: historylabel;
@@ -461,7 +470,7 @@ label {
   position: relative;
   border: 1px solid #354e4f;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 #img-to-upload {
@@ -475,6 +484,7 @@ label {
 
 label[for=img-to-upload] {
   grid-area: imgToUpload;
+  font-family: "poppins";
   height: 40px;
   width: 160px;
   cursor: pointer;
@@ -490,32 +500,42 @@ label[for=img-to-upload] {
   display: flex;
 }
 
-#submit {
+.submit-button-container {
   grid-area: submit;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  width: 678px;
+}
+
+#submit,
+#toHomePage {
   width: 90px;
   height: 40px;
-  margin-top: 24px;
-  right: 29px;
   position: relative;
   cursor: pointer;
 }
 
-.addAble {
-  top: -32px !important;
-  left: 0px !important;
-}
-
-.addAbleA {
-  top: -43px !important;
-  left: 1px !important;
-}
-
 @media screen and (max-width: 852px) {
+  main {
+    padding-top: 20px;
+  }
+
   .upload-form {
     width: 98vw;
+    left: 50%;
+    margin-bottom: 80px;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .submit-button-container {
+    width: 100%;
   }
 
   .user-field {
+    grid-template-columns: auto;
     width: 98vw;
     padding: 15px;
     grid-template-areas: "firstname" "lastname" "email" "uAge";

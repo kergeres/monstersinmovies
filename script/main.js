@@ -210,5 +210,7 @@ function appendProfile(bejon) {
 
 window.addEventListener('scroll', () => {
   let headerBar = document.querySelector(".header-bar")
+  let headerBarH1 = document.querySelector(".header-bar > h1")
   headerBar.classList.toggle('scroll-header-shrinker', window.scrollY > 0)
+  headerBarH1.classList.toggle('scroll-h1-shrinker', window.scrollY > 0)
 })

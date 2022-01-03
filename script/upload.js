@@ -32,7 +32,7 @@ let appearanceButtonCounter = 1
 document.querySelector("#appearance-btn").addEventListener('click', () => {
     appearanceButtonCounter++;
     document.querySelector('#extracontainer-appearance').style.display = "unset"
-    let newAppearanceField = `<input class="${appearanceButtonCounter} appearance " placeholder="appearance ${appearanceButtonCounter}" type="text" autocomplete="of"></input>`;
+    let newAppearanceField = `<input class="${appearanceButtonCounter} appearance "  type="text" autocomplete="of"></input>`;
     let collecter = []
     let assistantAppearance = document.querySelectorAll(".appearance");
     assistantAppearance.forEach(tag => {
@@ -47,7 +47,7 @@ let abilityButtonCounter = 1
 document.querySelector("#ability-btn").addEventListener('click', () => {
     abilityButtonCounter++;
     document.querySelector('#extracontainer-ability').style.display = "unset"
-    let newField = `<input class="${abilityButtonCounter} ability" placeholder="ability ${abilityButtonCounter}" type="text" autocomplete="of"></input>`;
+    let newField = `<input class="${abilityButtonCounter} ability"  type="text" autocomplete="of"></input>`;
     let collecter = []
     let assistant = document.querySelectorAll(".ability");
     assistant.forEach(tag => {
@@ -62,7 +62,7 @@ let creatorButtonCounter = 1
 document.querySelector("#creator-btn").addEventListener('click', () => {
     creatorButtonCounter++;
     document.querySelector('#extracontainer-creator').style.display = "unset"
-    let newField = `<input class="${creatorButtonCounter} creator" placeholder="creator ${creatorButtonCounter}" type="text" autocomplete="of"></input>`;
+    let newField = `<input class="${creatorButtonCounter} creator"  type="text" autocomplete="of"></input>`;
     let collecter = []
     let assistant = document.querySelectorAll(".creator");
     assistant.forEach(tag => {
@@ -77,7 +77,7 @@ let extlinksButtonCounter = 1
 document.querySelector("#extlinks-btn").addEventListener('click', () => {
     extlinksButtonCounter++;
     document.querySelector('#extracontainer-extlinks').style.display = "unset"
-    let newField = `<input class="${extlinksButtonCounter} extlinks" placeholder="extlinks ${extlinksButtonCounter}" type="text" autocomplete="of"></input>`;
+    let newField = `<input class="${extlinksButtonCounter} extlinks"  type="text" autocomplete="of"></input>`;
     let collecter = []
     let assistant = document.querySelectorAll(".extlinks");
     assistant.forEach(tag => {

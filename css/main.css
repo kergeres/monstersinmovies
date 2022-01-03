@@ -26,25 +26,37 @@
   background-color: white;
   width: 100%;
   height: 80px;
-  color: #4b4b4b;
-  font-family: "poppins";
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: 50px;
-  letter-spacing: 1.5px;
-  /* box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.5; */
+  box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.3);
   z-index: 5;
   border-width: 3px;
   border-bottom-style: solid;
   position: fixed;
-  transition: 1s;
+  transition: 0.7s;
   border-image: linear-gradient(to right, #070707, rgba(235, 235, 235, 0)) 1 100%;
+}
+.header-bar a:visited {
+  text-decoration: cone;
+  color: unset;
+}
+.header-bar h1 {
+  font-family: "poppins";
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+  color: #404040;
+  cursor: context-menu;
+  transition: 0.7s;
+  font-size: 40px;
 }
 
 .scroll-header-shrinker {
   height: 50px;
-  font-size: 40px;
+}
+
+.scroll-h1-shrinker {
+  font-size: 30px !important;
 }
 
 .header-bar span {
@@ -53,13 +65,24 @@
   position: absolute;
 }
 
+.header-logo {
+  height: 50px;
+  margin-right: 50px;
+}
+
 main {
   /* background-color: $light-brown; */
+  font-family: "poppins";
   background-color: #fafafa;
   width: 100%;
-  height: 2000px;
+  height: 1800px;
   cursor: default;
   padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.navAppended {
+  font-family: "poppins";
 }
 
 .headercompletor {
@@ -82,7 +105,7 @@ main {
   height: 30px;
   padding-left: 5px;
   border: none;
-  border: 1px solid black;
+  border: 1px solid #0a0907;
   margin-bottom: 30px;
 }
 
@@ -93,7 +116,7 @@ nav {
   border-right: 4px solid #c09a67;
   color: #707070;
   padding-left: 30px;
-  padding-top: 10px;
+  padding-top: 14px;
   position: absolute;
   left: 0px;
   border-width: 3px;
@@ -112,6 +135,9 @@ nav p:hover {
   color: #242424;
 }
 
+.item-title-container {
+  grid-area: itemTitleContainer;
+}
 .item-title-container label {
   cursor: pointer;
   z-index: 35;
@@ -129,6 +155,9 @@ nav p:hover {
   grid-template-areas: "top top" "left right" "left right" "bottom bottom";
 }
 .content-container .div-top {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
   grid-area: top;
   width: 900px;
   min-height: 60px;
@@ -139,6 +168,9 @@ nav p:hover {
   top: 50%;
   transform: translateY(-50%);
   position: relative;
+  font-family: "poppins";
+  font-size: 32px;
+  font-weight: normal;
 }
 .content-container .div-left {
   grid-area: left;
@@ -147,9 +179,11 @@ nav p:hover {
   display: flex;
   align-items: flex-start;
   padding-top: 25px;
+  font-family: "roboto slab";
 }
 .content-container .div-left table {
   margin: 0 auto;
+  font-family: "roboto slab";
   padding: 20px;
 }
 .content-container .div-left table td {
@@ -171,6 +205,7 @@ nav p:hover {
   background-color: #757575;
   padding: 18px;
   overflow-y: scroll;
+  border-bottom-left-radius: 2px;
 }
 .content-container .div-right img {
   margin: 9px;
@@ -182,19 +217,25 @@ nav p:hover {
   width: 100%;
   height: auto;
   padding: 48px;
+  font-family: "poppins";
 }
 .content-container h2 {
   color: #0a0907;
-  font-family: roboto;
   margin-top: 45px;
   font-size: 24px;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
 .content-container p {
-  font-family: sans-serif;
   font-size: 14px;
   line-height: 22px;
+}
+
+.upload-btn-ph {
+  grid-area: uploadButtonPh;
+  width: 80px;
+  height: 30px;
+  display: none;
 }
 
 .upload-btn-dstp {
@@ -229,6 +270,9 @@ a {
     width: 300px;
     height: 100vh;
     left: -300px;
+    display: grid;
+    grid-template-rows: 60px 90px auto;
+    grid-template-areas: "uploadButtonPh hamCont" "searchinput ." "itemTitleContainer .";
     position: fixed;
     transition: 0.5s all;
     z-index: 3;
@@ -237,10 +281,11 @@ a {
   }
   nav p {
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
   }
 
   .search-input {
+    grid-area: searchinput;
     height: 36px;
     font-size: 24px;
   }
@@ -257,6 +302,7 @@ a {
     position: fixed;
     cursor: pointer;
     height: 40px;
+    grid-area: hamCont;
   }
 
   .ham-menu-line {
@@ -284,6 +330,10 @@ a {
     border-radius: 1px;
     cursor: pointer;
     transition: 0.5s all;
+  }
+
+  .upload-btn-ph {
+    display: unset;
   }
 
   .ham-menu-lineb {
@@ -380,6 +430,7 @@ a {
   }
   .content-container .div-bottom {
     padding: 5px;
+    font-family: "poppins" !important;
   }
 
   .div-right {

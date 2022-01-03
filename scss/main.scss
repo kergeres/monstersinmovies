@@ -1,13 +1,4 @@
-$dark-brown: #1b0d01;
-$light-brown: #765c38;
-$dark-blue: #041738;
-$yellow: #c09a67;
-$blackk: #0a0907;
-$mid-brown: #757575;
-$minimal: "Gravesend Sans";
-$royal: "Mencken Std";
-
-$border: 1px solid black;
+@import "_vars.scss";
 
 * {
   margin: 0;
@@ -37,42 +28,59 @@ $border: 1px solid black;
   background-color: white;
   width: 100%;
   height: 80px;
-  color: #4b4b4b;
-  font-family: "poppins";
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: 50px;
-  letter-spacing: 1.5px;
-  /* box-shadow: 0px 3px 12px 3px rgba(0, 0, 0, 0.5; */
+  box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.3);
   z-index: 5;
   border-width: 3px;
   border-bottom-style: solid;
   position: fixed;
-  transition: 1s;
+  transition: 0.7s;
   border-image: linear-gradient(to right, #070707, rgba(235, 235, 235, 0)) 1
     100%;
+  a:visited {
+    text-decoration: cone;
+    color: unset;
+  }
+  h1 {
+    font-family: "poppins";
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    color: $mid-black;
+    cursor: context-menu;
+    transition: 0.7s;
+    font-size: 40px;
+  }
 }
 .scroll-header-shrinker {
   height: 50px;
-  font-size: 40px;
 }
-
+.scroll-h1-shrinker {
+  font-size: 30px !important;
+}
 .header-bar span {
   right: 0px;
   margin-right: 20px;
   position: absolute;
 }
-
+.header-logo {
+  height: 50px;
+  margin-right: 50px;
+}
 main {
   /* background-color: $light-brown; */
+  font-family: "poppins";
   background-color: #fafafa;
   width: 100%;
-  height: 2000px;
+  height: 1800px;
   cursor: default;
   padding-top: 100px;
+  padding-bottom: 80px;
 }
-
+.navAppended {
+  font-family: $poppins;
+}
 .headercompletor {
   width: 100%;
   height: 15px;
@@ -93,7 +101,7 @@ main {
   height: 30px;
   padding-left: 5px;
   border: none;
-  border: 1px solid black;
+  border: 1px solid $dark-black;
   margin-bottom: 30px;
 }
 
@@ -104,7 +112,7 @@ nav {
   border-right: 4px solid #c09a67;
   color: #707070;
   padding-left: 30px;
-  padding-top: 10px;
+  padding-top: 14px;
   position: absolute;
   left: 0px;
   border-width: 3px;
@@ -122,6 +130,7 @@ nav p {
   }
 }
 .item-title-container {
+  grid-area: itemTitleContainer;
   label {
     cursor: pointer;
     z-index: 35;
@@ -145,6 +154,9 @@ nav p {
     "left right"
     "bottom bottom";
   .div-top {
+    border-top-left-radius: $border-radius-small;
+    border-top-right-radius: $border-radius-small;
+    border-bottom-left-radius: $border-radius-small;
     grid-area: top;
     width: 900px;
     min-height: 60px;
@@ -154,6 +166,9 @@ nav p {
       top: 50%;
       transform: translateY(-50%);
       position: relative;
+      font-family: $poppins;
+      font-size: 32px;
+      font-weight: normal;
     }
   }
   .div-left {
@@ -163,10 +178,11 @@ nav p {
     display: flex;
     align-items: flex-start;
     padding-top: 25px;
+    font-family: $roboto-slab;
 
     table {
       margin: 0 auto;
-
+      font-family: $roboto-slab;
       padding: 20px;
       td {
         // border: $border;
@@ -190,6 +206,7 @@ nav p {
     background-color: $mid-brown;
     padding: 18px;
     overflow-y: scroll;
+    border-bottom-left-radius: $border-radius-small;
 
     img {
       margin: 9px;
@@ -202,21 +219,27 @@ nav p {
     width: 100%;
     height: auto;
     padding: 48px;
+    font-family: $poppins;
   }
   h2 {
-    color: #0a0907;
-    font-family: roboto;
+    color: $dark-black;
     margin-top: 45px;
     font-size: 24px;
     margin-bottom: 8px;
     text-transform: uppercase;
   }
   p {
-    font-family: sans-serif;
     font-size: 14px;
     line-height: 22px;
     // margin-bottom: 0px;
   }
+}
+
+.upload-btn-ph {
+  grid-area: uploadButtonPh;
+  width: 80px;
+  height: 30px;
+  display: none;
 }
 .upload-btn-dstp {
   position: absolute;
@@ -228,7 +251,7 @@ nav p {
 }
 h1 {
   text-align: center;
-  color: #0a0907;
+  color: $dark-black;
   font-family: roboto;
   text-transform: uppercase;
   font-size: 50px;
@@ -250,7 +273,12 @@ a {
     width: 300px;
     height: 100vh;
     left: -300px;
-
+    display: grid;
+    grid-template-rows: 60px 90px auto;
+    grid-template-areas:
+      "uploadButtonPh hamCont"
+      "searchinput ."
+      "itemTitleContainer .";
     position: fixed;
     transition: 0.5s all;
     z-index: 3;
@@ -258,10 +286,11 @@ a {
     box-shadow: 2px 3px 12px -3px rgba(0, 0, 0, 0.3);
     p {
       font-size: 24px;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
     }
   }
   .search-input {
+    grid-area: searchinput;
     height: 36px;
     font-size: 24px;
   }
@@ -278,6 +307,7 @@ a {
     position: fixed;
     cursor: pointer;
     height: 40px;
+    grid-area: hamCont;
   }
 
   .ham-menu-line {
@@ -306,7 +336,9 @@ a {
     cursor: pointer;
     transition: 0.5s all;
   }
-
+  .upload-btn-ph {
+    display: unset;
+  }
   .ham-menu-lineb {
     top: 1px;
   }
@@ -409,6 +441,7 @@ a {
     }
     .div-bottom {
       padding: 5px;
+      font-family: $poppins !important;
     }
   }
   .div-right {
