@@ -75,6 +75,7 @@ html {
   text-decoration: none;
   color: #707070;
   display: flex;
+  font-size: 16px;
 }
 a:visited {
   color: unset;
@@ -189,7 +190,7 @@ nav p {
     grid-area: top;
     width: 900px;
     min-height: 60px;
-    background-color: $mid-brown;
+    background-color: $light-black;
     display: inline;
     h1 {
       top: 50%;
@@ -232,7 +233,7 @@ nav p {
     grid-area: right;
     width: 450px;
     height: 400px;
-    background-color: $mid-brown;
+    background-color: $light-black;
     padding: 18px;
     overflow-y: scroll;
     border-bottom-left-radius: $border-radius-small;
@@ -275,16 +276,13 @@ h1 {
 
 a {
   text-decoration: none;
-  // color: #c09a67;
-  // font-family: "Gravesend Sans";
 }
 .fa-plus-square {
-  font-size: 24px;
+  font-size: 20px;
   &::before {
     content: "\f0fe";
-    transform: translateY(-19px);
     position: absolute;
-    transform: translate(-38px, -18px);
+    transform: translate(-23px, -15px);
   }
 }
 #mobileicon {
@@ -447,9 +445,7 @@ a {
   main {
     padding-top: 0px;
   }
-}
 
-@media screen and (max-width: 1260px) {
   .search-input {
     width: 190px;
   }
@@ -471,7 +467,7 @@ a {
       grid-area: top;
       width: 100vw;
       min-height: 100px;
-      background-color: $mid-brown;
+      background-color: $light-black;
       display: inline;
 
       h1 {
@@ -495,7 +491,7 @@ a {
       justify-content: center;
     }
     .div-bottom {
-      padding: 5px;
+      padding: 10px;
       font-family: $poppins !important;
     }
   }

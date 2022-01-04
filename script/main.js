@@ -215,11 +215,13 @@ function appendProfile(bejon) {
   document.documentElement.scrollTop = 0;
 }
 
-window.addEventListener('scroll', () => {
-  let headerBar = document.querySelector(".header-bar")
-  let headerLogo = document.querySelector(".header-logo-dktp")
-  let headerBarH1 = document.querySelector(".header-bar > h1")
-  headerBar.classList.toggle('scroll-header-shrinker', window.scrollY > 0)
-  headerLogo.classList.toggle('scroll-logo-shrinker', window.scrollY > 0)
-  headerBarH1.classList.toggle('scroll-h1-shrinker', window.scrollY > 0)
-})
+
+
+
+
+
+
+
+
+
+

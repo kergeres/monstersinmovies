@@ -30,8 +30,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+// global input
 input {
   margin-bottom: 8px;
+  background-color: darken(#ffffff, 20%) !important;
 }
 
 .upload-form {
@@ -48,7 +50,7 @@ input {
   width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
-  background-color: $user-field-bgco;
+  background-color: #adadad;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   display: grid;
@@ -63,7 +65,7 @@ input {
     font-size: 16px;
     height: 40px;
     color: #424242;
-    border: 1px solid #354e4f;
+    border: 1px solid $form-button-border;
     background-color: lighten($user-field-bgco, 80%);
     border-radius: 1px;
   }
@@ -88,10 +90,11 @@ a:visited {
 label {
   text-transform: lowercase;
   height: 24px;
-  color: #354e4f;
+  color: $form-label-color;
 }
 textarea {
   border-radius: 2px;
+  background-color: darken(#ffffff, 20%) !important;
 }
 
 #extracontainer-appearance {
@@ -104,7 +107,7 @@ textarea {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: auto;
-  background-color: rgba(71, 118, 120, 0.7);
+  background-color: $content-field-bgco;
   margin: 0 auto;
   padding: 72px 42px 32px 72px;
   display: grid;
@@ -132,7 +135,7 @@ textarea {
       font-size: 16px;
       height: 40px;
       color: #424242;
-      border: 1px solid #354e4f;
+      border: 1px solid $form-button-border;
       background-color: lighten($user-field-bgco, 80%);
       border-radius: 1px;
     }
@@ -141,12 +144,12 @@ textarea {
       height: 40px;
       width: 40px;
       cursor: pointer;
-      background-color: #6b8485;
-      border: 1px solid #354e4f;
+      background-color: $form-button;
+      border: 1px solid $form-button-border;
       color: #424242;
       border-radius: 2px;
       &:hover {
-        background-color: darken(#6b8485, 3);
+        background-color: darken($form-button, 5);
       }
     }
   }
@@ -166,7 +169,7 @@ textarea {
     display: grid;
     margin-top: 12px;
     label {
-      color: #354e4f;
+      color: $form-label-color;
       width: 140px;
     }
     input {
@@ -176,7 +179,7 @@ textarea {
       height: 40px;
 
       color: #424242;
-      border: 1px solid #354e4f;
+      border: 1px solid $form-button-border;
       background-color: lighten($user-field-bgco, 80%);
       border-radius: 1px;
     }
@@ -184,10 +187,13 @@ textarea {
       height: 40px;
       width: 112px;
       cursor: pointer;
-      background-color: #6b8485;
-      border: 1px solid #354e4f;
+      background-color: $form-button;
+      border: 1px solid $form-button-border;
       color: #424242;
       border-radius: 2px;
+      &:hover {
+        background-color: darken($form-button, 5);
+      }
       option {
         text-align: center;
         font-size: 16px;
@@ -197,13 +203,13 @@ textarea {
       height: 40px;
       width: 40px;
       cursor: pointer;
-      background-color: #6b8485;
-      border: 1px solid #354e4f;
+      background-color: $form-button;
+      border: 1px solid $form-button-border;
       color: #424242;
       border-radius: 2px;
       margin-left: 10px;
       &:hover {
-        background-color: darken(#6b8485, 3);
+        background-color: darken($form-button, 5);
       }
     }
   }
@@ -481,7 +487,7 @@ textarea {
     display: inline-block;
     left: 0px;
     top: -154px;
-    color: #354e4f;
+    color: $form-label-color;
     width: 140px;
     margin-bottom: 26px;
   }
@@ -496,7 +502,7 @@ textarea {
     vertical-align: top;
     color: #424242;
     position: relative;
-    border: 1px solid #354e4f;
+    border: 1px solid $form-button-border;
     background-color: lighten($user-field-bgco, 80%);
     border-radius: 2px;
   }
@@ -515,7 +521,7 @@ textarea {
     display: inline-block;
     left: 0px;
     top: -154px;
-    color: #354e4f;
+    color: $form-label-color;
     width: 140px;
     margin-bottom: 26px;
   }
@@ -529,7 +535,7 @@ textarea {
     vertical-align: top;
     color: #424242;
     position: relative;
-    border: 1px solid #354e4f;
+    border: 1px solid $form-button-border;
     background-color: lighten($user-field-bgco, 80%);
     border-radius: 2px;
   }
@@ -550,8 +556,8 @@ label[for="img-to-upload"] {
   cursor: pointer;
   padding-left: 15px;
   background-color: #b3b3b3;
-  border: 1px solid #354e4f;
-  color: #424242;
+  border: 1px solid $form-button-border;
+  color: $form-label-color;
   border-radius: 1px;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -574,6 +580,14 @@ label[for="img-to-upload"] {
   height: 40px;
   position: relative;
   cursor: pointer;
+  border: none;
+  background-color: $form-button;
+  border: 1px solid $form-button-border;
+  color: #424242;
+  border-radius: 2px;
+  &:hover {
+    background-color: darken($form-button, 5);
+  }
 }
 
 @media screen and (max-width: 852px) {

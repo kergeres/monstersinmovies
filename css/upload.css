@@ -35,6 +35,7 @@ body {
 
 input {
   margin-bottom: 8px;
+  background-color: #cccccc !important;
 }
 
 .upload-form {
@@ -50,7 +51,7 @@ input {
   width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
-  background-color: rgba(95, 158, 160, 0.7);
+  background-color: #adadad;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: grid;
@@ -63,8 +64,8 @@ input {
   font-size: 16px;
   height: 40px;
   color: #424242;
-  border: 1px solid #354e4f;
-  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #616161;
+  background-color: white;
   border-radius: 1px;
 }
 .user-field .input-container {
@@ -89,11 +90,12 @@ a:visited {
 label {
   text-transform: lowercase;
   height: 24px;
-  color: #354e4f;
+  color: #404040;
 }
 
 textarea {
   border-radius: 2px;
+  background-color: #cccccc !important;
 }
 
 #extracontainer-appearance {
@@ -107,7 +109,7 @@ textarea {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: auto;
-  background-color: rgba(71, 118, 120, 0.7);
+  background-color: #7a7a7a;
   margin: 0 auto;
   padding: 72px 42px 32px 72px;
   display: grid;
@@ -127,21 +129,21 @@ textarea {
   font-size: 16px;
   height: 40px;
   color: #424242;
-  border: 1px solid #354e4f;
-  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #616161;
+  background-color: white;
   border-radius: 1px;
 }
 .content-field .input-container button {
   height: 40px;
   width: 40px;
   cursor: pointer;
-  background-color: #6b8485;
-  border: 1px solid #354e4f;
+  background-color: #949494;
+  border: 1px solid #616161;
   color: #424242;
   border-radius: 2px;
 }
 .content-field .input-container button:hover {
-  background-color: #647c7d;
+  background-color: #878787;
 }
 .content-field .input-container-small {
   width: 300px;
@@ -150,7 +152,7 @@ textarea {
   margin-top: 12px;
 }
 .content-field .input-container-small label {
-  color: #354e4f;
+  color: #404040;
   width: 140px;
 }
 .content-field .input-container-small input {
@@ -159,18 +161,21 @@ textarea {
   font-size: 16px;
   height: 40px;
   color: #424242;
-  border: 1px solid #354e4f;
-  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #616161;
+  background-color: white;
   border-radius: 1px;
 }
 .content-field .input-container-small select {
   height: 40px;
   width: 112px;
   cursor: pointer;
-  background-color: #6b8485;
-  border: 1px solid #354e4f;
+  background-color: #949494;
+  border: 1px solid #616161;
   color: #424242;
   border-radius: 2px;
+}
+.content-field .input-container-small select:hover {
+  background-color: #878787;
 }
 .content-field .input-container-small select option {
   text-align: center;
@@ -180,14 +185,14 @@ textarea {
   height: 40px;
   width: 40px;
   cursor: pointer;
-  background-color: #6b8485;
-  border: 1px solid #354e4f;
+  background-color: #949494;
+  border: 1px solid #616161;
   color: #424242;
   border-radius: 2px;
   margin-left: 10px;
 }
 .content-field .input-container-small button:hover {
-  background-color: #647c7d;
+  background-color: #878787;
 }
 
 .firstname-container {
@@ -423,7 +428,7 @@ textarea {
   display: inline-block;
   left: 0px;
   top: -154px;
-  color: #354e4f;
+  color: #404040;
   width: 140px;
   margin-bottom: 26px;
 }
@@ -437,8 +442,8 @@ textarea {
   vertical-align: top;
   color: #424242;
   position: relative;
-  border: 1px solid #354e4f;
-  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #616161;
+  background-color: white;
   border-radius: 2px;
 }
 
@@ -454,7 +459,7 @@ textarea {
   display: inline-block;
   left: 0px;
   top: -154px;
-  color: #354e4f;
+  color: #404040;
   width: 140px;
   margin-bottom: 26px;
 }
@@ -468,8 +473,8 @@ textarea {
   vertical-align: top;
   color: #424242;
   position: relative;
-  border: 1px solid #354e4f;
-  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #616161;
+  background-color: white;
   border-radius: 2px;
 }
 
@@ -490,8 +495,8 @@ label[for=img-to-upload] {
   cursor: pointer;
   padding-left: 15px;
   background-color: #b3b3b3;
-  border: 1px solid #354e4f;
-  color: #424242;
+  border: 1px solid #616161;
+  color: #404040;
   border-radius: 1px;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -515,6 +520,15 @@ label[for=img-to-upload] {
   height: 40px;
   position: relative;
   cursor: pointer;
+  border: none;
+  background-color: #949494;
+  border: 1px solid #616161;
+  color: #424242;
+  border-radius: 2px;
+}
+#submit:hover,
+#toHomePage:hover {
+  background-color: #878787;
 }
 
 @media screen and (max-width: 852px) {
