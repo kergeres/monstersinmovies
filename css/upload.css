@@ -47,14 +47,14 @@ input {
 
 .user-field {
   margin: 0 auto;
-  width: 843px;
+  width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
   background-color: rgba(95, 158, 160, 0.7);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: grid;
-  grid-template-columns: auto 182px auto;
+  grid-template-columns: auto 152px auto;
   grid-template-areas: "firstname . lastname " "email . uAge ";
 }
 .user-field input {
@@ -103,7 +103,7 @@ textarea {
 }
 
 .content-field {
-  width: 843px;
+  width: 782px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: auto;
@@ -431,7 +431,7 @@ textarea {
   grid-area: aboutinput;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 160px;
-  width: 678px;
+  width: 641px;
   padding: 7px;
   font-size: 16px;
   vertical-align: top;
@@ -462,7 +462,7 @@ textarea {
   grid-area: historyinput;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 160px;
-  width: 678px;
+  width: 641px;
   padding: 7px;
   font-size: 16px;
   vertical-align: top;
@@ -506,7 +506,7 @@ label[for=img-to-upload] {
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
-  width: 678px;
+  width: 641px;
 }
 
 #submit,

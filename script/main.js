@@ -85,7 +85,12 @@ function appendNav(items) {
   clickListener()
 
 }
+function calculate_age(dob) {
+  var diff_ms = Date.now() - dob.getTime();
+  var age_dt = new Date(diff_ms);
 
+  return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
 
 let clickListener = () => {
 
@@ -111,6 +116,8 @@ function appendProfile(bejon) {
     let heightUnit = iterator.monster.height == "" ? "" : iterator.monster.heightUnit
     let birth = iterator.monster.birth == "" ? "" : "birth"
     let aBirth = birth < 1 ? "" : iterator.monster.birth
+    let stringBirth = iterator.monster.birth.ageCalcQ == "calculated" ? `~${iterator.monster.birth.yyyy}` : `${iterator.monster.birth.dd}/${iterator.monster.birth.mm}/${iterator.monster.birth.yyyy}`
+    let displayStringBirth = `${iterator.monster.birth.yyyy}-${iterator.monster.birth.mm}-${iterator.monster.birth.dd}`
     let pog = iterator.monster.pog == "" ? "" : "place of origin"
     let ability = iterator.monster.ability == "" ? "" : "ability"
     let creator = iterator.monster.creator == "" ? "" : "creator"
@@ -121,15 +128,13 @@ function appendProfile(bejon) {
 
     if (iterator.monster.mname == bejon) {
 
+      console.log(stringBirth);
 
-
-      let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
+      // let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
+      let age = calculate_age(new Date(`${displayStringBirth}`))
       let aAge = birth == "" ? "" : `(${age} years old)`
-      let e = new Date(iterator.monster.birth.seconds).getMonth()
-
+      console.log(age);
       let appearancess = iterator.monster.appearance;
-      console.log(appearancess);
-
       let toList = (inArray) => {
         let templt = ``
         for (const gpard of inArray) {
@@ -163,7 +168,7 @@ function appendProfile(bejon) {
               </tr>
               <tr>
                   <td>${birth}</td>
-                  <td>${aBirth} ${aAge}</td>
+                  <td>${stringBirth} ${aAge}</td>
               </tr>
               <tr>
                   <td>${pog}</td>

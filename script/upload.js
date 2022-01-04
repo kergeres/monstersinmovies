@@ -101,7 +101,10 @@ let inputValueSaver = (dataIn, inputName) => {
 
 }
 
-
+let birthDateCalc = (yearIn) => {
+    let bornYear = new Date().getFullYear() - yearIn
+    return bornYear;
+}
 
 
 function fireStoreUpload() {
@@ -150,16 +153,21 @@ function fireStoreUpload() {
         let heightUnit = document.querySelector('#heightUnit').value
         let weight = document.querySelector('#weight').value
         let weightUnit = document.querySelector('#weightUnit').value
-        let stringBirth = `${document.querySelector('#dd').value}/${document.querySelector('#mm').value}/${document.querySelector('#yyyy').value}`
         let age = document.querySelector('#age').value != "" ? document.querySelector('#age').value : ""
-        let birth = document.querySelector('#yyyy').value != "" ? new Date(parseInt(document.querySelector('#yyyy').value), parseInt(document.querySelector('#mm').value), parseInt(document.querySelector('#dd').value)) : (age * 31556952)
+
+        let dd = document.querySelector('#yyyy').value == "" ? `01` : document.querySelector('#dd').value
+        let mm = document.querySelector('#yyyy').value == "" ? `01` : document.querySelector('#mm').value
+        let yyyy = document.querySelector('#yyyy').value == "" ? `${birthDateCalc(age)}` : document.querySelector('#yyyy').value
+        let stringBirth = document.querySelector('#yyyy').value == "" ? `${birthDateCalc(age)}-01-01` : `${yyyy}-${mm}-${dd}`
+        console.log(stringBirth);
+        let ageCalcQ = document.querySelector('#age').value != "" ? "calculated" : "notCalculated"
+
+
+        // let birth2 = parseInt(document.querySelector('#yyyy').value.new Date() (parseInt(document.querySelector('#mm').value) - 1), parseInt(document.querySelector('#dd').value)) 
 
         let pog = document.querySelector('#pog').value
-        // let ability = document.querySelector('#ability').value
-        // let creator = document.querySelector('#creator').value
         let history = document.querySelector('#history').value
         let about = document.querySelector('#about').value
-        // let extlinks = document.querySelector('#extlinks').value
 
         firebaseToUpload.doc().set(
             {
@@ -177,9 +185,13 @@ function fireStoreUpload() {
                     heightUnit: heightUnit,
                     weight: weight,
                     weightUnit: weightUnit,
-                    birth: birth,
-                    stringBirth: stringBirth,
-                    age: age,
+                    birth: {
+                        stringBirth: stringBirth,
+                        yyyy: yyyy,
+                        dd: dd,
+                        mm: mm,
+                        ageCalcQ: ageCalcQ
+                    },
                     pog: pog,
                     ability: ability,
                     creator: creator,
