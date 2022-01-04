@@ -22,6 +22,10 @@
   background-color: #4b4b4b;
 }
 
+::placeholder {
+  opacity: 0.6;
+}
+
 .header-bar {
   background-color: white;
   width: 100%;
@@ -166,7 +170,7 @@ nav p:hover {
 
 .item-title-container {
   grid-area: itemTitleContainer;
-  height: 65vh;
+  height: 423px;
 }
 .item-title-container label {
   cursor: pointer;
@@ -451,7 +455,7 @@ a {
 
   .content-container {
     height: auto;
-    /* width: 70vw; */
+    width: auto;
     right: 50%;
     transform: translateX(50%);
     /* margin-right: -20px; */
@@ -462,8 +466,8 @@ a {
   }
   .content-container .div-top {
     grid-area: top;
-    width: 100%;
-    min-height: 60px;
+    width: 100vw;
+    min-height: 100px;
     background-color: #757575;
     display: inline;
   }
