@@ -28,7 +28,7 @@
   height: 80px;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0px 1px 7px 2px rgba(0, 0, 0, 0.3);
   z-index: 5;
   border-width: 3px;
@@ -36,10 +36,6 @@
   position: fixed;
   transition: 0.7s;
   border-image: linear-gradient(to right, #070707, rgba(235, 235, 235, 0)) 1 100%;
-}
-.header-bar a:visited {
-  text-decoration: cone;
-  color: unset;
 }
 .header-bar h1 {
   font-family: "poppins";
@@ -51,23 +47,56 @@
   font-size: 40px;
 }
 
-.scroll-header-shrinker {
+html {
+  scroll-behavior: smooth;
+}
+
+.header-logo-dktp {
   height: 50px;
+  margin-left: 77px;
+  transition: 0.7s;
+}
+
+.header-logo-ph {
+  display: none;
+}
+
+.upload-btn-ph {
+  grid-area: uploadButtonPh;
+  display: none;
+}
+
+.upload-btn-dstp {
+  margin-right: 77px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: #707070;
+  display: flex;
+}
+
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
+.scroll-header-shrinker {
+  height: 55px;
 }
 
 .scroll-h1-shrinker {
   font-size: 30px !important;
 }
 
+.scroll-logo-shrinker {
+  height: 40px;
+  margin-left: 77px;
+}
+
 .header-bar span {
   right: 0px;
   margin-right: 20px;
   position: absolute;
-}
-
-.header-logo {
-  height: 50px;
-  margin-right: 50px;
 }
 
 main {
@@ -137,6 +166,7 @@ nav p:hover {
 
 .item-title-container {
   grid-area: itemTitleContainer;
+  height: 65vh;
 }
 .item-title-container label {
   cursor: pointer;
@@ -231,22 +261,6 @@ nav p:hover {
   line-height: 22px;
 }
 
-.upload-btn-ph {
-  grid-area: uploadButtonPh;
-  width: 80px;
-  height: 30px;
-  display: none;
-}
-
-.upload-btn-dstp {
-  position: absolute;
-  right: 50px;
-  border: none;
-  background: none;
-  text-decoration: none;
-  color: #707070;
-}
-
 h1 {
   text-align: center;
   color: #0a0907;
@@ -260,6 +274,16 @@ a {
   text-decoration: none;
 }
 
+.fa-plus-square {
+  font-size: 24px;
+}
+.fa-plus-square::before {
+  content: "\f0fe";
+  transform: translateY(-19px);
+  position: absolute;
+  transform: translate(-38px, -18px);
+}
+
 #mobileicon {
   display: none;
 }
@@ -271,8 +295,8 @@ a {
     height: 100vh;
     left: -300px;
     display: grid;
-    grid-template-rows: 60px 90px auto;
-    grid-template-areas: "uploadButtonPh hamCont" "searchinput ." "itemTitleContainer .";
+    grid-template-rows: 60px auto 105px;
+    grid-template-areas: "searchinput searchinput hamCont" "itemTitleContainer itemTitleContainer ." "logoUpldContainer logoUpldContainer .";
     position: fixed;
     transition: 0.5s all;
     z-index: 3;
@@ -280,8 +304,16 @@ a {
     box-shadow: 2px 3px 12px -3px rgba(0, 0, 0, 0.3);
   }
   nav p {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
+  }
+
+  .logo-upld-container {
+    grid-area: logoUpldContainer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
   }
 
   .search-input {
@@ -290,14 +322,24 @@ a {
     font-size: 24px;
   }
 
+  .header-logo-dktp {
+    display: none;
+  }
+
+  .header-logo-ph {
+    grid-area: headerLogoPh;
+    height: 80px;
+    display: unset;
+  }
+
   .nav-open {
     left: 0;
-    padding-top: 62px;
+    padding-top: 36px;
   }
 
   .ham-cont {
     z-index: 3;
-    top: 62px;
+    top: 39px;
     left: 20px;
     position: fixed;
     cursor: pointer;
@@ -334,6 +376,21 @@ a {
 
   .upload-btn-ph {
     display: unset;
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: #707070;
+    font-size: 16px;
+  }
+
+  .fa-plus-square {
+    font-size: 24px;
+  }
+  .fa-plus-square::before {
+    content: "\f0fe";
+    transform: translateY(-19px);
+    position: absolute;
+    transform: translate(-27px, -17px);
   }
 
   .ham-menu-lineb {

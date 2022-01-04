@@ -111,13 +111,15 @@ function fireStoreUpload() {
     document.querySelector('#submit').addEventListener('click', () => {
         let date = new Date()
         let year = date.getFullYear()
-        let month = date.getMonth()
-        let day = date.getDay()
+        let month = date.getMonth() + 1
+        let day = date.getDay() + 2
         let hour = date.getHours()
         let min = date.getMinutes()
         let sec = date.getSeconds()
 
         let extime = `${year}/${month}/${day} ${hour}:${min}:${sec}`
+        console.log(extime);
+        console.log(date);
 
 
         let firstname = document.querySelector('#firstname').value
@@ -159,11 +161,14 @@ function fireStoreUpload() {
         let mm = document.querySelector('#yyyy').value == "" ? `01` : document.querySelector('#mm').value
         let yyyy = document.querySelector('#yyyy').value == "" ? `${birthDateCalc(age)}` : document.querySelector('#yyyy').value
         let stringBirth = document.querySelector('#yyyy').value == "" ? `${birthDateCalc(age)}-01-01` : `${yyyy}-${mm}-${dd}`
-        console.log(stringBirth);
-        let ageCalcQ = document.querySelector('#age').value != "" ? "calculated" : "notCalculated"
 
 
-        // let birth2 = parseInt(document.querySelector('#yyyy').value.new Date() (parseInt(document.querySelector('#mm').value) - 1), parseInt(document.querySelector('#dd').value)) 
+        let ageCalcQ;
+        if (document.querySelector('#age').value != "" && document.querySelector('#yyyy').value == "") {
+            ageCalcQ = 'calculated';
+        } else {
+            ageCalcQ = 'notCalculated';
+        }
 
         let pog = document.querySelector('#pog').value
         let history = document.querySelector('#history').value

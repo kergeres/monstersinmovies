@@ -1,0 +1,573 @@
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+:-moz-placeholder {
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.bg-container {
+  background-image: url("/img/upload-bg.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: fixed;
+  /* Full height */
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  margin-bottom: 8px;
+}
+
+.upload-form {
+  width: auto;
+  min-height: 1000px;
+  margin: 0px auto 80px auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-field {
+  margin: 0 auto;
+  width: 782px;
+  min-height: 230px;
+  padding: 55px 0px 43px 72px;
+  background-color: rgba(95, 158, 160, 0.7);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: grid;
+  grid-template-columns: auto 152px auto;
+  grid-template-areas: "firstname . lastname " "email . uAge ";
+}
+.user-field input {
+  width: 180px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  color: #424242;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.user-field .input-container {
+  display: grid;
+  margin-top: 12px;
+  width: 303px;
+  height: 65px;
+}
+.user-field .input-container button {
+  margin-left: 10px;
+}
+
+a:visited {
+  text-decoration: cone;
+  color: unset;
+}
+
+#email {
+  width: 300px;
+}
+
+label {
+  text-transform: lowercase;
+  height: 24px;
+  color: #354e4f;
+}
+
+textarea {
+  border-radius: 2px;
+}
+
+#extracontainer-appearance {
+  width: auto;
+  display: none;
+  height: auto;
+}
+
+.content-field {
+  width: 782px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: auto;
+  background-color: rgba(71, 118, 120, 0.7);
+  margin: 0 auto;
+  padding: 72px 42px 32px 72px;
+  display: grid;
+  grid-template-areas: "imgToUpload imgToUpload imgToUpload ." "mname mname appearance appearance" "height height weight weight" "age age birth birth" "pog pog ability ability" "creator creator extlinks extlinks" "history history history history" "about about about about" "submit submit submit submit   ";
+}
+.content-field .input-container {
+  width: 323px;
+  min-height: 60px;
+}
+.content-field .input-container label {
+  margin-right: 20px;
+  width: 140px;
+}
+.content-field .input-container input {
+  width: 250px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  color: #424242;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.content-field .input-container button {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+}
+.content-field .input-container button:hover {
+  background-color: #647c7d;
+}
+.content-field .input-container-small {
+  width: 300px;
+  min-height: 60px;
+  display: grid;
+  margin-top: 12px;
+}
+.content-field .input-container-small label {
+  color: #354e4f;
+  width: 140px;
+}
+.content-field .input-container-small input {
+  width: 180px;
+  padding-left: 7px;
+  font-size: 16px;
+  height: 40px;
+  color: #424242;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+}
+.content-field .input-container-small select {
+  height: 40px;
+  width: 112px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+}
+.content-field .input-container-small select option {
+  text-align: center;
+  font-size: 16px;
+}
+.content-field .input-container-small button {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: #6b8485;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+.content-field .input-container-small button:hover {
+  background-color: #647c7d;
+}
+
+.firstname-container {
+  grid-area: firstname;
+  display: grid;
+  grid-template-areas: "labelfirstname" "inputfirstname";
+}
+.firstname-container label {
+  grid-area: labelfirstname;
+}
+.firstname-container input {
+  grid-area: inputfirstname;
+}
+
+.lastname-container {
+  grid-area: lastname;
+  display: grid;
+  grid-template-areas: "labellastname" "inputlastname";
+}
+.lastname-container label {
+  grid-area: labellastname;
+}
+.lastname-container input {
+  grid-area: inputlastname;
+}
+
+.email-container {
+  grid-area: email;
+  display: grid;
+  grid-template-areas: "labelemail" "inputemail";
+}
+.email-container label {
+  grid-area: labelemail;
+}
+.email-container input {
+  grid-area: inputemail;
+}
+
+.uAge-container {
+  grid-area: uAge;
+  display: grid;
+  grid-template-areas: "labeluage" "inputuage";
+}
+.uAge-container label[for=uAge] {
+  grid-area: labeluage;
+}
+.uAge-container input {
+  grid-area: inputuage;
+}
+
+.mname-container {
+  grid-template-rows: 23px 50px;
+  display: grid;
+  grid-area: mname;
+  grid-template-areas: "labelmname" "inputmname";
+}
+.mname-container label[for=mname] {
+  grid-area: labelmname;
+}
+.mname-container input {
+  grid-area: inputmname;
+  width: 302px !important;
+}
+
+.appearance-container {
+  display: grid;
+  grid-template-rows: 23px 50px;
+  grid-template-columns: 250px 50px;
+  grid-area: appearance;
+  grid-template-areas: "labelappearance ." "inputappearance buttonappearance" "extracontainerappearance .";
+}
+.appearance-container label[for=appearance] {
+  grid-area: labelappearance;
+}
+.appearance-container input {
+  grid-area: inputappearance;
+}
+.appearance-container button {
+  grid-area: buttonappearance;
+  margin-left: 10px;
+}
+.appearance-container #extracontainer-appearance {
+  grid-area: extracontainerappearance;
+}
+
+.height-container {
+  grid-area: height;
+  grid-template-columns: 180px 100px;
+  grid-template-areas: "heightlabel ." "heightInput selectHeightUnit";
+}
+.height-container label [for=height] {
+  grid-area: heightlabel;
+}
+.height-container #height {
+  grid-area: heightInput;
+}
+.height-container #heightUnit {
+  grid-area: selectHeightUnit;
+  margin-left: 10px;
+}
+
+.weight-container {
+  grid-area: weight;
+  grid-template-columns: 180px 100px;
+  grid-template-areas: "weightlabel ." "weightInput selectWeightUnit";
+}
+.weight-container label [for=weight] {
+  grid-area: weightlabel;
+}
+.weight-container #weight {
+  grid-area: weightInput;
+}
+.weight-container #weightUnit {
+  grid-area: selectWeightUnit;
+  margin-left: 10px;
+}
+
+.age-container {
+  grid-area: age;
+  grid-template-areas: "agelabel " "ageInput";
+  grid-template-rows: 23px 40px;
+  height: 60px;
+}
+.age-container label [for=age] {
+  grid-area: agelabel;
+}
+.age-container #age {
+  grid-area: ageInput;
+}
+
+.birth-container {
+  grid-area: birth;
+  grid-template-areas: "birthlabel " "bcs";
+}
+.birth-container .birth-container-small {
+  grid-area: bcs;
+  grid-template-areas: "dd mm yy";
+}
+.birth-container label [for=birth] {
+  grid-area: birthlabel;
+}
+.birth-container #dd {
+  grid-area: dd;
+  width: 50px;
+}
+.birth-container #mm {
+  grid-area: mm;
+  width: 50px;
+}
+.birth-container #yyyy {
+  grid-area: yyyy;
+  width: 70px;
+}
+
+.pog-container {
+  grid-area: pog;
+  grid-template-rows: 23px 40px;
+  height: 60px;
+  grid-template-areas: "poglabel " "poginput";
+}
+.pog-container label [for=pog] {
+  grid-area: poglabel;
+}
+.pog-container input {
+  grid-area: poginput;
+}
+
+.ability-container {
+  grid-area: ability;
+  grid-template-columns: 180px 50px;
+  grid-template-areas: "abilitylabel ." "abilityinput abilitybutton" "abilityextracontainer .";
+}
+.ability-container label [for=ability] {
+  grid-area: abilitylabel;
+}
+.ability-container input {
+  grid-area: abilityinput;
+}
+.ability-container button {
+  grid-area: abilitybutton;
+}
+.ability-container #extracontainer-ability {
+  grid-area: abilityextracontainer;
+}
+
+.creator-container {
+  grid-area: creator;
+  grid-template-columns: 180px 50px;
+  grid-template-rows: 23px 50px;
+  grid-template-areas: "creatorlabel ." "creatorinput creatorbutton" "creatorextracontainer .";
+}
+.creator-container label [for=creator] {
+  grid-area: creatorlabel;
+}
+.creator-container input {
+  grid-area: creatorinput;
+}
+.creator-container button {
+  grid-area: creatorbutton;
+}
+.creator-container #extracontainer-creator {
+  grid-area: creatorextracontainer;
+}
+
+.extlinks-container {
+  grid-area: extlinks;
+  grid-template-columns: 180px 50px;
+  grid-template-rows: 23px 50px;
+  grid-template-areas: "extlinkslabel ." "extlinksinput extlinksbutton" "extlinksextracontainer .";
+}
+.extlinks-container label [for=extlinks] {
+  grid-area: extlinkslabel;
+}
+.extlinks-container input {
+  grid-area: extlinksinput;
+}
+.extlinks-container button {
+  grid-area: extlinksbutton;
+}
+.extlinks-container #extracontainer-extlinks {
+  grid-area: extlinksextracontainer;
+}
+
+.about-container {
+  grid-area: about;
+  display: grid;
+  grid-template-areas: "aboutlabel ." " aboutinput aboutinput";
+  margin-top: 32px;
+}
+.about-container label [for=about] {
+  grid-area: aboutlabel;
+  margin-right: 20px;
+  display: inline-block;
+  left: 0px;
+  top: -154px;
+  color: #354e4f;
+  width: 140px;
+  margin-bottom: 26px;
+}
+.about-container textarea {
+  grid-area: aboutinput;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 160px;
+  width: 641px;
+  padding: 7px;
+  font-size: 16px;
+  vertical-align: top;
+  color: #424242;
+  position: relative;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+}
+
+.history-container {
+  grid-area: history;
+  display: grid;
+  grid-template-areas: "historylabel ." " historyinput historyinput";
+  margin-top: 32px;
+}
+.history-container label [for=history] {
+  grid-area: historylabel;
+  margin-right: 20px;
+  display: inline-block;
+  left: 0px;
+  top: -154px;
+  color: #354e4f;
+  width: 140px;
+  margin-bottom: 26px;
+}
+.history-container textarea {
+  grid-area: historyinput;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 160px;
+  width: 641px;
+  padding: 7px;
+  font-size: 16px;
+  vertical-align: top;
+  color: #424242;
+  position: relative;
+  border: 1px solid #354e4f;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+}
+
+#img-to-upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label[for=img-to-upload] {
+  grid-area: imgToUpload;
+  font-family: "poppins";
+  height: 40px;
+  width: 160px;
+  cursor: pointer;
+  padding-left: 15px;
+  background-color: #b3b3b3;
+  border: 1px solid #354e4f;
+  color: #424242;
+  border-radius: 1px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.submit-button-container {
+  grid-area: submit;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  width: 641px;
+}
+
+#submit,
+#toHomePage {
+  width: 90px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 852px) {
+  main {
+    padding-top: 20px;
+  }
+
+  .upload-form {
+    width: 98vw;
+    left: 50%;
+    margin-bottom: 80px;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .submit-button-container {
+    width: 100%;
+  }
+
+  .user-field {
+    grid-template-columns: auto;
+    width: 98vw;
+    padding: 15px;
+    grid-template-areas: "firstname" "lastname" "email" "uAge";
+  }
+
+  .content-field {
+    width: 98vw;
+    padding: 32px 16px;
+    grid-template-areas: "imgToUpload" "mname" "appearance" "appearance" "height" "weight" "birth" "age" "ability" "pog" "creator" "extlinks" "history" "about " "submit";
+  }
+
+  .input-container,
+.input-container-small {
+    width: 90vw !important;
+  }
+
+  input:not(#dd, #mm, #yyyy, #age),
+textarea {
+    width: 100% !important;
+  }
+
+  .height-container,
+.weight-container {
+    grid-template-columns: auto 122px;
+  }
+
+  .ability-container,
+.creator-container,
+.extlinks-container,
+.appearance-container {
+    grid-template-columns: auto 50px;
+  }
+}
+
+/*# sourceMappingURL=upload.scss.map */
