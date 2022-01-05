@@ -1,46 +1,41 @@
 @import "_vars.scss";
 
-::-webkit-input-placeholder {
-  font-style: italic;
-}
-:-moz-placeholder {
-  font-style: italic;
-}
-::-moz-placeholder {
-  font-style: italic;
-}
-:-ms-input-placeholder {
-  font-style: italic;
-}
-
-.bg-container {
-  background-image: url("/img/upload-bg.jpg");
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  position: fixed;
-  /* Full height */
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+a:visited {
+  text-decoration: cone;
+  color: unset;
+}
+
+label {
+  text-transform: lowercase;
+  height: 24px;
+  color: $form-label-color;
+}
+textarea {
+  border-radius: 2px;
+  background-color: darken(#ffffff, 20%) !important;
+}
 // global input
-input {
+input:not(#submit, #img-to-upload) {
   margin-bottom: 8px;
   background-color: darken(#ffffff, 20%) !important;
+}
+
+.uploaded-mess {
+  border: $border;
+  height: 200px;
+  height: 200px;
+  width: 400px;
+  background-color: lawngreen;
+  position: fixed;
 }
 
 .upload-form {
   width: auto;
   min-height: 1000px;
   margin: 0px auto 80px auto;
-  //   padding: 50px 0px 50px 50px;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 }
@@ -79,22 +74,9 @@ input {
     }
   }
 }
-a:visited {
-  text-decoration: cone;
-  color: unset;
-}
+
 #email {
   width: 300px;
-}
-
-label {
-  text-transform: lowercase;
-  height: 24px;
-  color: $form-label-color;
-}
-textarea {
-  border-radius: 2px;
-  background-color: darken(#ffffff, 20%) !important;
 }
 
 #extracontainer-appearance {
@@ -153,15 +135,6 @@ textarea {
       }
     }
   }
-  // #ability-container,
-  // #creator-container,
-  // #extlinks-container {
-  //   width: 300px;
-  //   .ability,
-  //   .creator {
-  //     margin-top: 5px;
-  //   }
-  // }
 
   .input-container-small {
     width: 300px;
@@ -290,7 +263,6 @@ textarea {
 }
 .appearance-container {
   display: grid;
-
   grid-template-rows: 23px 50px;
   grid-template-columns: 250px 50px;
   grid-area: appearance;
@@ -298,7 +270,6 @@ textarea {
     "labelappearance ."
     "inputappearance buttonappearance"
     "extracontainerappearance .";
-
   label[for="appearance"] {
     grid-area: labelappearance;
   }
@@ -309,7 +280,6 @@ textarea {
     grid-area: buttonappearance;
     margin-left: 10px;
   }
-
   #extracontainer-appearance {
     grid-area: extracontainerappearance;
   }
@@ -540,14 +510,7 @@ textarea {
     border-radius: 2px;
   }
 }
-#img-to-upload {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
+
 label[for="img-to-upload"] {
   grid-area: imgToUpload;
   font-family: $poppins;
@@ -639,53 +602,11 @@ label[for="img-to-upload"] {
   .input-container-small {
     width: 90vw !important;
   }
-  input:not(#dd, #mm, #yyyy, #age),
+  input:not(#dd, #mm, #yyyy, #age, #submit),
   textarea {
     width: 100% !important;
   }
-  // div {
-  //   max-width: 95vw !important;
-  //   input:not(#dd, #mm, #yyyy),
-  //
-  //   }
-  // }
-  // button:not(#submit) {
-  //   // left: -148px;
-  //   // right: -66px;
-  //   // top: 30px;
-  //   position: relative;
-  // }
-  // .input-container-small {
-  //   select {
-  //     right: -17px;
-  //   }
-  // }
-  // label {
-  //   height: 20px;
-  //   position: relative;
-  // }
-  // #submit {
-  //   left: 1vw;
-  // }
-  // .content-field {
-  //   .input-container,
-  //   .input-container-small {
-  //     border: $border;
-  //     width: 90% !important;
-  //     min-width: unset;
-  //     display: flex;
-  //   }
-  // }
-  // .height-container #appearance-btn {
-  //   right: unset !important;
-  // }
-  // .user-field {
-  //   .input-container {
-  //     border: $border;
-  //     width: 100% !important;
-  //     min-width: unset;
-  //   }
-  // }
+
   .height-container,
   .weight-container {
     grid-template-columns: auto 122px;

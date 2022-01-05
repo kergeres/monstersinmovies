@@ -102,7 +102,7 @@ main {
   font-family: "poppins";
   background-color: #fafafa;
   width: 100%;
-  height: 1800px;
+  min-height: 2000px;
   cursor: default;
   padding-top: 100px;
   padding-bottom: 80px;
@@ -133,7 +133,9 @@ main {
   border: 1px solid $dark-black;
   margin-bottom: 30px;
 }
-
+.extlink-c {
+  margin-top: 50px;
+}
 nav {
   background-color: #fafafa;
   width: 200px;
@@ -143,6 +145,7 @@ nav {
   padding-left: 30px;
   padding-top: 14px;
   position: absolute;
+  overflow-x: hidden;
   left: 0px;
   border-width: 3px;
   border-right-style: solid;
@@ -166,10 +169,28 @@ nav p {
     z-index: 35;
   }
 }
+.land-page-container {
+  height: 400px;
+  width: 600px;
+  margin-top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  p {
+    margin-top: 20px;
+  }
+}
+
+.panding-page-img {
+  width: 40%;
+  margin: 0 auto;
+}
 .content-container {
   height: auto;
   width: 900px;
-
   right: 50%;
   transform: translateX(50%);
   margin-right: -20px;
@@ -237,11 +258,15 @@ nav p {
     padding: 18px;
     overflow-y: scroll;
     border-bottom-left-radius: $border-radius-small;
+    display: flex;
 
     img {
       margin: 9px;
-      width: auto;
+      width: 100%;
+      border-radius: $border-radius-small;
       height: auto;
+      margin: 0 auto;
+      align-self: center;
     }
   }
   .div-bottom {
@@ -297,6 +322,7 @@ a {
     left: -300px;
     display: grid;
     grid-template-rows: 60px auto 105px;
+    grid-template-columns: 60px 187px 105px;
     grid-template-areas:
       "searchinput searchinput hamCont"
       "itemTitleContainer itemTitleContainer ."

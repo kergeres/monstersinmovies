@@ -1,28 +1,11 @@
 "use strict";
-// let database = [];
-
-// async function loadData() {
-//   let response = await fetch("../data/json.json");
-//   let jsonData = await response.json();
-//   database = jsonData
-//   appendNav(database)
-//   clickListener()
-
-// }
-
-// async function init() {
-//   await loadData();
-
-// }
-// init();
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyBOC0w_ML4qOHKRFTHp5_o2kGLImSE-29A",
   authDomain: "spitfy-graphs.firebaseapp.com",
@@ -53,9 +36,9 @@ firebaseMonstersRef.onSnapshot(function (snapshotData) {
   appendNav(database)
 });
 
-
+// search functions by searchbar in firebase database 
 document.querySelector(".search-input").addEventListener('keyup', (e) => {
-  let srchValue = document.querySelector('.search-input').value
+  let srchValue = document.querySelector('.search-input').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   searchPrograms(srchValue)
 })
 
@@ -63,7 +46,7 @@ function searchPrograms(value) {
 
   let filteredPrograms = []
   for (const item of database) {
-    let title = item.monster.mname.toLowerCase();
+    let title = item.monster.mname.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     if (title.includes(value.toLowerCase())) {
       filteredPrograms.push(item);
@@ -72,7 +55,7 @@ function searchPrograms(value) {
 
   appendNav(filteredPrograms);
 }
-
+// append the creatures name list on the list bar  
 function appendNav(items) {
   let temlplete = ""
 
@@ -80,11 +63,12 @@ function appendNav(items) {
     temlplete += `<label for="mobileicon"><p class="navAppended">${item.monster.mname}</p></label> `
 
   }
-  // onclick="appendProfile(${item.id})"
+
   document.querySelector(".item-title-container").innerHTML = temlplete
   clickListener()
 
 }
+
 function calculate_age(dob) {
   var diff_ms = Date.now() - dob.getTime();
   var age_dt = new Date(diff_ms);
@@ -104,8 +88,9 @@ let clickListener = () => {
 }
 clickListener()
 
-function appendProfile(bejon) {
 
+// SPA selected data page to the dom 
+function appendProfile(bejon) {
 
   let htmlTemplate = ""
   for (let iterator of database) {
@@ -124,17 +109,13 @@ function appendProfile(bejon) {
     let history = iterator.monster.history == "" ? "" : "history"
     let about = iterator.monster.about == "" ? "" : "about"
 
-
-
     if (iterator.monster.mname == bejon) {
 
-      console.log(stringBirth);
-
-      // let age = new Date(((Date.now() / 1000) - (iterator.monster.birth)) * 1000).getFullYear()
       let age = calculate_age(new Date(`${displayStringBirth}`))
       let aAge = birth == "" ? "" : `(${age} years old)`
-      console.log(age);
       let appearancess = iterator.monster.appearance;
+
+
       let toList = (inArray) => {
         let templt = ``
         for (const gpard of inArray) {
@@ -147,7 +128,6 @@ function appendProfile(bejon) {
       }
 
       htmlTemplate = `
-
       <div class="div-top">
           <h1>${iterator.monster.mname}</h1>
       </div>
@@ -185,32 +165,32 @@ function appendProfile(bejon) {
           </table>
       </div>
       <div class="div-right">
-          <img src="img/tie2.jpg">
-          <img src="img/tie2.jpg">
-          <img src="img/tie2.jpg">
-          <img src="img/tie2.jpg">
-          <img src="img/tie2.jpg">
+          <img class="profile-image" src="${iterator.monster.images}">
+          
       </div>
       <div class="div-bottom">
           <h2>${history}</h2>
           <p>${iterator.monster.history}</p>
           <h2>${about}</h2>
           <p>${iterator.monster.about}</p>
+          <div class="extlink-c"><i class="extlink-sp">
+                  ${toList(iterator.monster.extlinks)}</i>
+         </div>
       </div>`
-
     }
   }
 
 
+  // remove the empty td cells from the table
   document.querySelector(".content-container").innerHTML = htmlTemplate;
   let segedtomb = document.querySelectorAll('td')
   for (const elem of segedtomb) {
-    // console.log(elem.children[0] && elem.children[1]);
+
     if (elem.innerHTML == "" || elem.innerHTML == " " || elem.innerHTML == "  " || elem.innerHTML.includes(" <br>")) {
-      console.log(elem);
       elem.parentElement.remove()
     }
   }
+  // scroll to top 
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
