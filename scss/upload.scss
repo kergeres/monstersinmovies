@@ -27,11 +27,20 @@ input:not(#submit, #img-to-upload) {
   border: $border;
   height: 200px;
   height: 200px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   background-color: lawngreen;
   position: fixed;
+  text-align: center;
+  h2 {
+    margin-top: 20px;
+  }
 }
+// .uploaded-mess-container {
 
+// }
 .upload-form {
   width: auto;
   min-height: 1000px;

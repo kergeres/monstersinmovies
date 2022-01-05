@@ -27,9 +27,16 @@ input:not(#submit, #img-to-upload) {
   border: 1px solid black;
   height: 200px;
   height: 200px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   background-color: lawngreen;
   position: fixed;
+  text-align: center;
+}
+.uploaded-mess h2 {
+  margin-top: 20px;
 }
 
 .upload-form {

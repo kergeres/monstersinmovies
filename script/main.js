@@ -7,13 +7,13 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-
 // Firebase configuration
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBOC0w_ML4qOHKRFTHp5_o2kGLImSE-29A",
-  authDomain: "spitfy-graphs.firebaseapp.com",
-  projectId: "spitfy-graphs",
-  storageBucket: "spitfy-graphs.appspot.com",
-  messagingSenderId: "235726714106",
-  appId: "1:235726714106:web:90c46bc58370e2ef080543",
-  measurementId: "G-LWDKH1XG04"
+  apiKey: "AIzaSyCkpdg957656NHhYdug_fG5aR5_1rC2YYo",
+  authDomain: "monsters-in-movies.firebaseapp.com",
+  projectId: "monsters-in-movies",
+  storageBucket: "monsters-in-movies.appspot.com",
+  messagingSenderId: "662074601460",
+  appId: "1:662074601460:web:504ca9afdc6835841613a1",
+  measurementId: "G-LV81HRN89M"
 };
 
 // Initialize Firebase
