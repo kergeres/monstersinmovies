@@ -18,6 +18,15 @@ const firebaseConfig = {
     measurementId: "G-LV81HRN89M"
 };
 
+// google analytics initialize 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'G-LV81HRN89M');
+
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
@@ -116,9 +125,9 @@ let birthDateCalc = (yearIn) => {
 }
 
 let uploadedMessage = () => {
-    let messageTemlate = `<div class="uploaded-mess"><h2>upload successful</h2> <p>we will check your uploadation soon</p> <button><a href="../index.html">back to home</a></button><button><a href="upload.html" >upload more</a> </button> </div>`
+    let messageTemlate = ` <div class="uploaded-mess-container"> <div class="uploaded-mess"><h2>upload successful</h2> <p>We will check your uploadation soon.</p> <a  href="upload.html" ><button class="um-btn" >upload more</button></a>  <a href="../index.html"><button class="bth-btn" >back to home</button></a> </div> </div>`
 
-    document.querySelector(".uploaded-mess-container").innerHTML = messageTemlate
+    document.querySelector(".uploaded-mess-out-container").innerHTML = messageTemlate
 }
 
 
@@ -126,7 +135,8 @@ let uploadedMessage = () => {
 
 function fireStoreUpload() {
 
-    document.querySelector('#submit').addEventListener('click', () => {
+    document.querySelector('.upload-form').addEventListener('submit', (e) => {
+        e.preventDefault()
         let imgUrls = ['https://firebasestorage.googleapis.com/v0/b/spitfy-graphs.appspot.com/o/no-image.svg?alt=media&token=f5ff4fce-1d3d-4a84-9e44-75b7504e375a'];
 
         let file = document.querySelector('#img-to-upload').files[0]
@@ -135,11 +145,11 @@ function fireStoreUpload() {
         if (file) {
 
 
-            const ref = firebase.storage().ref();
-            const metadata = {
+            let ref = firebase.storage().ref();
+            let metadata = {
                 contentType: file.type
             };
-            const task = ref.child('images/' + file.name).put(file, metadata);
+            let task = ref.child('images/' + file.name).put(file, metadata);
             task
                 .then(snapshot => snapshot.ref.getDownloadURL())
                 .then(url => {
@@ -168,7 +178,7 @@ function fireStoreUpload() {
                     let firstname = document.querySelector('#firstname').value
                     let lastname = document.querySelector('#lastname').value
                     let email = document.querySelector('#email').value
-                    let imgToUpload = document.querySelector('#img-to-uploadd').files[0]
+                    let imgToUpload = document.querySelector('#img-to-upload').files[0]
                     let mname = document.querySelector('#mname').value
 
 

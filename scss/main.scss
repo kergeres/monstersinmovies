@@ -253,7 +253,8 @@ nav p {
   .div-right {
     grid-area: right;
     width: 450px;
-    height: 400px;
+    min-height: 400px;
+    height: auto;
     background-color: $light-black;
     padding: 18px;
     overflow-y: scroll;
@@ -262,7 +263,7 @@ nav p {
 
     img {
       margin: 9px;
-      width: 100%;
+      width: 60%;
       border-radius: $border-radius-small;
       height: auto;
       margin: 0 auto;

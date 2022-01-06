@@ -49,7 +49,7 @@
 
                 <div id="appearance-container" class="input-container appearance-container">
 
-                    <input class="appearance 2" type="text" name="appearance" autocomplete="of">
+                    <input required class="appearance 2" type="text" name="appearance" autocomplete="of">
                     <div id="extracontainer-appearance"></div>
                     <label class="addAbleA " for="appearance">appearance</label>
                     <button id="appearance-btn" type="button"><i class="fas fa-plus"></i></button>
@@ -129,14 +129,14 @@
                 </div>
                 <div class="submit-button-container">
 
-                    <button id="toHomePage" type="button"><a href="../index.html">go back</a></button>
-                    <button id="submit" type="button">upload</button>
+                    <a href="../index.html"> <button id="toHomePage" type="button">go back</button></a>
+                    <button id="submit" type="submit">upload</button>
                 </div>
 
 
             </div>
         </form>
-        <div class="uploaded-mess-container">
+        <div class="uploaded-mess-out-container">
 
         </div>
     </main>
@@ -147,6 +147,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV81HRN89M"></script>
+
 
     <script type="module" src="../script/upload.js"></script>
 </body>

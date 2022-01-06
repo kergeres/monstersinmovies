@@ -261,7 +261,8 @@ nav p:hover {
 .content-container .div-right {
   grid-area: right;
   width: 450px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   background-color: #adadad;
   padding: 18px;
   overflow-y: scroll;
@@ -270,7 +271,7 @@ nav p:hover {
 }
 .content-container .div-right img {
   margin: 9px;
-  width: 100%;
+  width: 60%;
   border-radius: 2px;
   height: auto;
   margin: 0 auto;

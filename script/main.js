@@ -16,6 +16,15 @@ const firebaseConfig = {
   measurementId: "G-LV81HRN89M"
 };
 
+// google analytics initialize 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+
+gtag('config', 'G-LV81HRN89M');
+
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);

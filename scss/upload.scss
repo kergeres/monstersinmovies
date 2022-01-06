@@ -25,17 +25,64 @@ input:not(#submit, #img-to-upload) {
 
 .uploaded-mess {
   border: $border;
-  height: 200px;
-  height: 200px;
-  top: 45%;
+  height: 250px;
+  width: 485px;
+  background-color: #adadad;
+  border-radius: $border-radius-small;
+  position: absolute;
+  text-align: center;
   left: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: lawngreen;
+  -webkit-box-shadow: 3px 3px 23px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 23px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 23px -4px rgba(0, 0, 0, 0.75);
+  p {
+    margin-top: 20px;
+  }
+}
+.uploaded-mess-container {
+  border: $border;
+  color: $dark-black;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.9;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  background-color: #616161;
   position: fixed;
   text-align: center;
   h2 {
     margin-top: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .um-btn,
+  .bth-btn {
+    margin: 24px;
+    bottom: 0;
+    position: absolute;
+    border: 1px solid #707070;
+
+    border-radius: 3px;
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+      color: lighten($dark-black, 30);
+    }
+  }
+  .um-btn {
+    right: 0;
+  }
+  .bth-btn {
+    left: 0;
   }
 }
 // .uploaded-mess-container {
