@@ -178,7 +178,8 @@ function fireStoreUpload() {
                     let firstname = document.querySelector('#firstname').value
                     let lastname = document.querySelector('#lastname').value
                     let email = document.querySelector('#email').value
-                    let imgToUpload = document.querySelector('#img-to-upload').files[0]
+                    let uAge = document.querySelector('#uAge').value
+
                     let mname = document.querySelector('#mname').value
 
 
@@ -232,6 +233,7 @@ function fireStoreUpload() {
                                 firstname: firstname,
                                 lastname: lastname,
                                 email: email,
+                                age: uAge,
                             },
                             monster: {
                                 mname: mname,
@@ -277,7 +279,7 @@ function fireStoreUpload() {
             let firstname = document.querySelector('#firstname').value
             let lastname = document.querySelector('#lastname').value
             let email = document.querySelector('#email').value
-            // let imgToUpload = document.querySelector('#img-to-uploadd').files[0]
+            let uAge = document.querySelector('#uAge').value
             let mname = document.querySelector('#mname').value
 
 
@@ -331,6 +333,7 @@ function fireStoreUpload() {
                         firstname: firstname,
                         lastname: lastname,
                         email: email,
+                        age: uAge,
                     },
                     monster: {
                         mname: mname,

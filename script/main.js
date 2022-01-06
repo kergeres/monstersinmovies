@@ -109,7 +109,7 @@ function appendProfile(bejon) {
     let height = iterator.monster.height == "" ? "" : "height"
     let heightUnit = iterator.monster.height == "" ? "" : iterator.monster.heightUnit
     let birth = iterator.monster.birth == "" ? "" : "birth"
-    let aBirth = birth < 1 ? "" : iterator.monster.birth
+
     let stringBirth = iterator.monster.birth.ageCalcQ == "calculated" ? `~${iterator.monster.birth.yyyy}` : `${iterator.monster.birth.dd}/${iterator.monster.birth.mm}/${iterator.monster.birth.yyyy}`
     let displayStringBirth = `${iterator.monster.birth.yyyy}-${iterator.monster.birth.mm}-${iterator.monster.birth.dd}`
     let pog = iterator.monster.pog == "" ? "" : "place of origin"
@@ -122,7 +122,7 @@ function appendProfile(bejon) {
 
       let age = calculate_age(new Date(`${displayStringBirth}`))
       let aAge = birth == "" ? "" : `(${age} years old)`
-      let appearancess = iterator.monster.appearance;
+
 
 
       let toList = (inArray) => {
