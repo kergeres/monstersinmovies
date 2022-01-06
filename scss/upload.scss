@@ -567,7 +567,9 @@ input:not(#submit, #img-to-upload) {
     border-radius: 2px;
   }
 }
-
+#img-to-upload {
+  margin-bottom: 30px;
+}
 label[for="img-to-upload"] {
   grid-area: imgToUpload;
   font-family: $poppins;
