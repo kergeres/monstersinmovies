@@ -27,7 +27,7 @@
 }
 
 ::selection {
-  background-color: red;
+  background-color: #fcba03;
 }
 
 .header-bar {
@@ -54,11 +54,12 @@
   transition: 0.7s;
   font-size: 40px;
 }
-.header-bar b {
+
+b {
   font-family: "poppins";
   letter-spacing: 1.5px;
   font-weight: lighter;
-  color: red;
+  color: #fcba03;
   cursor: context-menu;
   transition: 0.7s;
   font-size: 40px;
@@ -88,7 +89,7 @@ html {
   border: none;
   background: none;
   text-decoration: none;
-  color: red;
+  color: #fcba03;
   display: flex;
   font-size: 16px;
 }
@@ -307,8 +308,11 @@ nav p:hover {
   font-size: 24px;
   margin-bottom: 8px;
   text-transform: uppercase;
-  border-left: 3px solid red;
+  border-left: 3px solid #fcba03;
   padding-left: 4px;
+  padding-top: 1px;
+  padding-right: 1px;
+  padding-bottom: 1px;
 }
 .content-container p {
   font-size: 14px;
@@ -412,6 +416,7 @@ a {
     display: block;
     transition: 0.5s all;
     border-radius: 1px;
+    background-color: #fcba03 !important;
   }
 
   .ham-menu-linea,
@@ -426,6 +431,7 @@ a {
     border-radius: 1px;
     cursor: pointer;
     transition: 0.5s all;
+    background-color: #fcba03 !important;
   }
 
   .upload-btn-ph {
@@ -433,7 +439,7 @@ a {
     border: none;
     background: none;
     text-decoration: none;
-    color: red;
+    color: #fcba03;
     font-size: 16px;
   }
 

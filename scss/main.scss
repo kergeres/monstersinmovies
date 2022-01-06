@@ -54,15 +54,15 @@
     transition: 0.7s;
     font-size: 40px;
   }
-  b {
-    font-family: "poppins";
-    letter-spacing: 1.5px;
-    font-weight: lighter;
-    color: $index;
-    cursor: context-menu;
-    transition: 0.7s;
-    font-size: 40px;
-  }
+}
+b {
+  font-family: "poppins";
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+  color: $index;
+  cursor: context-menu;
+  transition: 0.7s;
+  font-size: 40px;
 }
 html {
   scroll-behavior: smooth;
@@ -301,6 +301,9 @@ nav p {
     text-transform: uppercase;
     border-left: 3px solid $index;
     padding-left: 4px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
   }
   p {
     font-size: 14px;
@@ -404,6 +407,7 @@ a {
     display: block;
     transition: 0.5s all;
     border-radius: 1px;
+    background-color: $index !important;
   }
 
   .ham-menu-linea,
@@ -418,7 +422,9 @@ a {
     border-radius: 1px;
     cursor: pointer;
     transition: 0.5s all;
+    background-color: $index !important;
   }
+
   .upload-btn-ph {
     display: unset;
     border: none;

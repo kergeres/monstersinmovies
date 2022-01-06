@@ -80,7 +80,7 @@ input:not(#submit, #img-to-upload) {
 }
 .uploaded-mess-container .um-btn {
   right: 0;
-  border: 1px solid red;
+  border: 1px solid #fcba03;
 }
 .uploaded-mess-container .bth-btn {
   left: 0;
@@ -99,7 +99,7 @@ input:not(#submit, #img-to-upload) {
   width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
-  background-color: #990000;
+  background-color: #e3a703;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: grid;
@@ -141,7 +141,7 @@ input:not(#submit, #img-to-upload) {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: auto;
-  background-color: red;
+  background-color: #fcba03;
   margin: 0 auto;
   padding: 72px 42px 32px 72px;
   display: grid;
