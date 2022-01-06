@@ -605,5 +605,28 @@ textarea {
     grid-template-columns: auto 50px;
   }
 }
+@media screen and (max-width: 480px) {
+  .uploaded-mess {
+    padding: 20px;
+    height: 300px;
+  }
+  .uploaded-mess .um-btn,
+.uploaded-mess .bth-btn {
+    margin: 20px;
+    bottom: 0;
+    position: absolute;
+    border: 1px solid #707070;
+    border-radius: 3px;
+    width: 90px;
+    height: 40px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  .uploaded-mess .um-btn:hover,
+.uploaded-mess .bth-btn:hover {
+    color: #645a46;
+  }
+}
 
 /*# sourceMappingURL=upload.css.map */
