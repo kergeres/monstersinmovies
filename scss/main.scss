@@ -26,6 +26,9 @@
 ::placeholder {
   opacity: 0.6;
 }
+::selection {
+  background-color: $index;
+}
 .header-bar {
   background-color: white;
   width: 100%;
@@ -47,6 +50,15 @@
     letter-spacing: 1.5px;
     font-weight: lighter;
     color: $mid-black;
+    cursor: context-menu;
+    transition: 0.7s;
+    font-size: 40px;
+  }
+  b {
+    font-family: "poppins";
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    color: $index;
     cursor: context-menu;
     transition: 0.7s;
     font-size: 40px;
@@ -73,7 +85,7 @@ html {
   border: none;
   background: none;
   text-decoration: none;
-  color: #707070;
+  color: $index;
   display: flex;
   font-size: 16px;
 }
@@ -85,6 +97,9 @@ a:visited {
   height: 55px;
 }
 .scroll-h1-shrinker {
+  font-size: 30px !important;
+}
+.scroll-b-shrinker {
   font-size: 30px !important;
 }
 .scroll-logo-shrinker {
@@ -284,6 +299,8 @@ nav p {
     font-size: 24px;
     margin-bottom: 8px;
     text-transform: uppercase;
+    border-left: 3px solid $index;
+    padding-left: 4px;
   }
   p {
     font-size: 14px;
@@ -407,7 +424,7 @@ a {
     border: none;
     background: none;
     text-decoration: none;
-    color: #707070;
+    color: $index;
     font-size: 16px;
   }
   .fa-plus-square {

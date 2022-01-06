@@ -15,12 +15,12 @@ label {
 
 textarea {
   border-radius: 2px;
-  background-color: #cccccc !important;
+  background-color: #e6e6e6 !important;
 }
 
 input:not(#submit, #img-to-upload) {
   margin-bottom: 8px;
-  background-color: #cccccc !important;
+  background-color: #e6e6e6 !important;
 }
 
 .uploaded-mess {
@@ -80,6 +80,7 @@ input:not(#submit, #img-to-upload) {
 }
 .uploaded-mess-container .um-btn {
   right: 0;
+  border: 1px solid red;
 }
 .uploaded-mess-container .bth-btn {
   left: 0;
@@ -98,7 +99,7 @@ input:not(#submit, #img-to-upload) {
   width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
-  background-color: #adadad;
+  background-color: #990000;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: grid;
@@ -140,7 +141,7 @@ input:not(#submit, #img-to-upload) {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   height: auto;
-  background-color: #7a7a7a;
+  background-color: red;
   margin: 0 auto;
   padding: 72px 42px 32px 72px;
   display: grid;
@@ -553,11 +554,12 @@ label[for=img-to-upload] {
   background-color: #878787;
 }
 
-@media screen and (max-width: 852px) {
-  main {
-    padding-top: 20px;
+@media screen and (max-width: 1260px) {
+  .upload-form {
+    margin-top: 80px;
   }
-
+}
+@media screen and (max-width: 852px) {
   .upload-form {
     width: 98vw;
     left: 50%;

@@ -1,12 +1,37 @@
+// $poppins: "poppins";
+// $roboto-slab: "roboto slab";
+
+// $light-black: #adadad;
+// $mid-black: #404040;
+// $dark-black: #0a0907;
+
+// $user-field-bgco: $light-black;
+// $content-field-bgco: darken($light-black, 20);
+// $form-button: darken($light-black, 10);
+// $form-button-border: darken($light-black, 30);
+// $form-label-color: $mid-black;
+
+// $border-radius: 5px;
+// $border-radius-small: 2px;
+
+// // for development
+// $border: 1px solid black;
+
+// $dark-brown: #1b0d01;
+// $light-brown: #765c38;
+// $dark-blue: #041738;
+// $yellow: #c09a67;
+// $blackk: #0a0907;
+
 $poppins: "poppins";
 $roboto-slab: "roboto slab";
 
 $light-black: #adadad;
 $mid-black: #404040;
 $dark-black: #0a0907;
-
-$user-field-bgco: $light-black;
-$content-field-bgco: darken($light-black, 20);
+$index: red;
+$user-field-bgco: darken($index, 20);
+$content-field-bgco: $index;
 $form-button: darken($light-black, 10);
 $form-button-border: darken($light-black, 30);
 $form-label-color: $mid-black;

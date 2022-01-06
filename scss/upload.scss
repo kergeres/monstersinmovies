@@ -15,12 +15,12 @@ label {
 }
 textarea {
   border-radius: 2px;
-  background-color: darken(#ffffff, 20%) !important;
+  background-color: darken(#ffffff, 10%) !important;
 }
 // global input
 input:not(#submit, #img-to-upload) {
   margin-bottom: 8px;
-  background-color: darken(#ffffff, 20%) !important;
+  background-color: darken(#ffffff, 10%) !important;
 }
 
 .uploaded-mess {
@@ -80,6 +80,7 @@ input:not(#submit, #img-to-upload) {
   }
   .um-btn {
     right: 0;
+    border: 1px solid $index;
   }
   .bth-btn {
     left: 0;
@@ -101,7 +102,7 @@ input:not(#submit, #img-to-upload) {
   width: 782px;
   min-height: 230px;
   padding: 55px 0px 43px 72px;
-  background-color: #adadad;
+  background-color: $user-field-bgco;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   display: grid;
@@ -593,6 +594,7 @@ label[for="img-to-upload"] {
   margin-top: 32px;
   width: 641px;
 }
+
 #submit,
 #toHomePage {
   width: 90px;
@@ -608,15 +610,17 @@ label[for="img-to-upload"] {
     background-color: darken($form-button, 5);
   }
 }
-
-@media screen and (max-width: 852px) {
-  main {
-    padding-top: 20px;
+@media screen and (max-width: 1260px) {
+  .upload-form {
+    margin-top: 80px;
   }
+}
+@media screen and (max-width: 852px) {
   .upload-form {
     width: 98vw;
     left: 50%;
     margin-bottom: 80px;
+
     transform: translateX(-50%);
     position: absolute;
   }
