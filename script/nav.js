@@ -3,6 +3,7 @@
 
 // hamburger menu opener 
 function hamburgerNav() {
+
     let cbOpen = document.querySelector('#mobileicon');
     if (cbOpen.checked == false)//ha zarva van
     {

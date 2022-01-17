@@ -7,7 +7,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-
 
 
 // Firebase configuration
-
 const firebaseConfig = {
     apiKey: "AIzaSyCkpdg957656NHhYdug_fG5aR5_1rC2YYo",
     authDomain: "monsters-in-movies.firebaseapp.com",

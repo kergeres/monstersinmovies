@@ -174,7 +174,7 @@ function appendProfile(bejon) {
           </table>
       </div>
       <div class="div-right">
-          <img class="profile-image" src="${iterator.monster.images}">
+          <img alt="${iterator.monster.mname}" class="profile-image" src="${iterator.monster.images}">
           
       </div>
       <div class="div-bottom">
