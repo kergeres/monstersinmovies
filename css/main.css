@@ -194,7 +194,7 @@ nav p:hover {
 
 .item-title-container {
   grid-area: itemTitleContainer;
-  height: 423px;
+  height: 400px;
 }
 .item-title-container label {
   cursor: pointer;
@@ -357,7 +357,7 @@ a {
     height: 100vh;
     left: -300px;
     display: grid;
-    grid-template-rows: 60px auto 105px;
+    grid-template-rows: 60px 400px 105px;
     grid-template-columns: 60px 187px 105px;
     grid-template-areas: "searchinput searchinput hamCont" "itemTitleContainer itemTitleContainer ." "logoUpldContainer logoUpldContainer .";
     position: fixed;
