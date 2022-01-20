@@ -345,6 +345,11 @@ a {
   display: none;
 }
 
+.extlink-sp {
+  word-wrap: break-word;
+  max-width: 100vw;
+}
+
 @media screen and (max-width: 1260px) {
   nav {
     background-color: white;
@@ -549,6 +554,10 @@ a {
   .content-container .div-bottom {
     padding: 10px;
     font-family: "poppins" !important;
+    width: 100vw;
+  }
+  .content-container .div-bottom p {
+    text-align: justify;
   }
 
   .div-right {
